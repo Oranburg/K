@@ -1,0 +1,133 @@
+# Bilbo's Contract — Learning Objective Tags
+# Maps contract sections to Quaere LOs, casebook chapters, and teaching topics
+# Source: Quaere LAW-503 contracts-objectives-v2.ts
+
+contract_sections:
+
+  - section: "Recitals"
+    topics: [recitals as interpretive aids, puffery vs warranty]
+    quaere_los: [C1.1c]
+    casebook_chapters: [1, 14]
+    module: FOUND
+    teaching_notes: "Recitals establish purpose but are not operative. 'Proposed chiefly by a wizard' — is Gandalf's recommendation a warranty or puffery?"
+
+  - section: "Article 1 - Definitions"
+    topics: [defined terms, precision in drafting, ambiguity avoidance]
+    quaere_los: [C5.1a, C1.1a]
+    casebook_chapters: [1, 2, 14]
+    module: FOUND
+    teaching_notes: "Compare to UCC 2-105 (goods). 'Treasure' excludes 'sentimental complaints not readily convertible into money' — a contractual definition that does real work."
+
+  - section: "Article 2 - Engagement and Status"
+    topics: [independent contractor vs employee, objective theory, warranty disclaimers]
+    quaere_los: [C1.1c, C1.1d]
+    casebook_chapters: [1, 2, 3]
+    module: FOUND
+    teaching_notes: "Section 2.3 (independent contractor) prevents implied partnership. Section 2.4 (no guarantee) is a disclaimer — compare to warranty disclaimers in UCC 2-316."
+
+  - section: "Article 3 - Scope of Services"
+    topics: [reasonable efforts standard, excluded duties, scope of engagement]
+    quaere_los: [C2.2a, C3.1a]
+    casebook_chapters: [19, 20]
+    module: PERF
+    teaching_notes: "'Reasonable efforts' vs 'best endeavours' — the earlier draft used best endeavours, this one uses reasonable. Significant difference. Section 3.3 excludes dragon-slaying — scope limitation."
+
+  - section: "Article 4 - Term"
+    topics: [duration, termination events, conditions subsequent]
+    quaere_los: [C1.3a, C2.3a]
+    casebook_chapters: [5, 19]
+    module: ASSENT
+    teaching_notes: "Five termination triggers. Compare to R2d 261 (impossibility). 'Permanent demise' is wonderfully specific."
+
+  - section: "Article 5 - Compensation"
+    topics: [consideration, illusory promises, net profits, inspection rights, anti-dilution]
+    quaere_los: [C1.2a, C1.2b, C4.1a]
+    casebook_chapters: [7, 8, 24, 25]
+    module: CONSID
+    teaching_notes: "KEY SECTION. 1/14 of net proceeds — is this adequate consideration? Illusory if adventure fails? Compare to contingency fees. Section 5.4 (no discretionary dilution) prevents Hollywood accounting. Section 5.5 gives inspection rights — unusual and protective."
+
+  - section: "Article 6 - Expenses"
+    topics: [reimbursement, advance of funds, emergency expenditures]
+    quaere_los: [C2.2a]
+    casebook_chapters: [24, 25]
+    module: REMED
+    teaching_notes: "'While invisible' — the contract anticipates magic ring use. Emergency expenditure clause is sophisticated risk allocation."
+
+  - section: "Article 7 - Company Obligations"
+    topics: [duty to disclose, material information, equalization of risk, ratification by conduct]
+    quaere_los: [C1.4a, C2.1a]
+    casebook_chapters: [12, 13]
+    module: DEFNS
+    teaching_notes: "Section 7.2 requires disclosure of 'tendency by Thorin to become unreasonable in the presence of treasure' — this is MATERIAL. Treasure-sickness is a known risk the Company must disclose. Section 7.4 (ratification by conduct) solves the agency problem from the earlier draft."
+
+  - section: "Article 8 - Conditions Precedent"
+    topics: [conditions precedent, suspension vs discharge, constructive satisfaction]
+    quaere_los: [C2.3a, C2.3b]
+    casebook_chapters: [19]
+    module: PERF
+    teaching_notes: "Section 8.3 ('No Constructive Satisfaction by Boasting') is legally sound and hilarious. A condition is not met because a wizard is confident."
+
+  - section: "Article 9 - Risk Allocation"
+    topics: [assumption of risk, misrepresentation, mutual mistake, frustration, impossibility, force majeure]
+    quaere_los: [C1.4a, C1.4b, C2.4a, C2.4b]
+    casebook_chapters: [11, 12, 21, 22]
+    module: DEFNS
+    teaching_notes: "COMPREHENSIVE SECTION covering R2d 152 (mistake), 261 (impossibility), 265 (frustration). Section 9.2 carves out misrepresentation — assumption of risk doesn't bar claims for fraud. Section 9.6 is a genuine force majeure clause covering capture by trolls."
+
+  - section: "Article 10 - Indemnity and Restitution"
+    topics: [indemnification, restitution, reliance damages, unjust enrichment, third-party beneficiaries (heirs)]
+    quaere_los: [C2.5a, C2.5b, C1.5a]
+    casebook_chapters: [8, 9, 24, 25, 26, 27, 28]
+    module: REMED
+    teaching_notes: "Covers ALL three damage measures: expectation (via Article 5), reliance (10.4), restitution (10.3). Section 10.5 makes heirs third-party beneficiaries — connects to Ch. 28."
+
+  - section: "Article 11 - Good Faith"
+    topics: [implied covenant, opportunistic behavior, confidentiality, fair dealing]
+    quaere_los: [C2.2b, C4.1a]
+    casebook_chapters: [20, 23]
+    module: PERF
+    teaching_notes: "Section 11.3 addresses THE ARKENSTONE QUESTION directly: temporary concealment permitted 'to prevent immediate violence or mutual ruin.' This is the contract's most sophisticated clause."
+
+  - section: "Article 12 - Breach and Termination"
+    topics: [material breach, cure, immediate termination, accrued rights]
+    quaere_los: [C2.3c, C2.4a]
+    casebook_chapters: [20, 21]
+    module: PERF
+    teaching_notes: "Section 12.4 (accrued rights survive termination) is critical — Bilbo keeps earned compensation even if contract terminates."
+
+  - section: "Article 13 - Remedies"
+    topics: [expectation damages, liquidated damages, mitigation, specific performance]
+    quaere_los: [C2.5a, C2.5b, C2.5c]
+    casebook_chapters: [24, 25, 26, 27]
+    module: REMED
+    teaching_notes: "Section 13.2 (liquidated damages) is textbook — acknowledges difficulty of calculating actual damages. Section 13.3 (mitigation) — 'no party shall be required to mitigate by marching unarmed into a dragon's mouth.'"
+
+  - section: "Article 14 - Assignment and Third Parties"
+    topics: [assignment, delegation, personal services, third-party beneficiaries]
+    quaere_los: [C1.5a, C5.1a]
+    casebook_chapters: [28]
+    module: REMED
+    teaching_notes: "'No dragon shall claim status as an incidental beneficiary' — teaches the intended vs incidental beneficiary distinction through humor."
+
+  - section: "Article 15 - General Provisions"
+    topics: [integration clause, amendments, interpretation, severability, governing law, dispute resolution, venue]
+    quaere_los: [C3.1a, C3.1b, C5.1a]
+    casebook_chapters: [14, 15, 16, 17]
+    module: INTERP
+    teaching_notes: "Section 15.1 (entire agreement / integration clause) connects directly to parol evidence rule (Ch. 17). Section 15.3 (contra proferentem) — ambiguities construed against drafter. Section 15.6 (arbitration: one hobbit, one dwarf, one neutral elf) is a real dispute resolution mechanism with humor."
+
+arkenstone_question:
+  description: "The single most important teaching moment in the contract"
+  relevant_sections: [3.1, 7.2, 11.3, 12.1, 13.1]
+  quaere_los: [C4.1a, C4.1b, C6.1a]
+  casebook_chapters: [19, 20, 21, 24]
+  modules: [PERF, REMED]
+  teaching_note: >
+    Bilbo takes the Arkenstone and gives it to Bard to force negotiation.
+    Section 11.3 permits temporary concealment to prevent violence.
+    Section 3.1 requires 'reasonable efforts' to retrieve treasure.
+    Is giving away treasure a reasonable effort to preserve it?
+    The question cannot be answered by reading the contract alone.
+    It requires practical judgment — phronesis. This is the connection
+    to The Safety Machine: the contract provides the framework,
+    character provides the judgment. You need both.
