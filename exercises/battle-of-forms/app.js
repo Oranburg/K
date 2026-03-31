@@ -11,12 +11,12 @@ var SCENARIOS = [
     tag: "Between merchants — non-material additional term",
     tags: ["2-207(1)", "2-207(2)", "2-207(2)(b)"],
     masteryKey: "Formation by writings",
-    narrative: "Tobold Hornblower II, a pipeweed merchant of Longbottom, sends a purchase order to Barliman Butterbur at the Prancing Pony for fifty barrels of Old Toby. Butterbur sends back an acknowledgment that matches the order in every respect — except it adds one new term.",
+    narrative: "Barliman Butterbur, innkeeper of the Prancing Pony in Bree, sends a purchase order to the Hornblower family in Longbottom — the finest pipeweed growers in the Southfarthing — for fifty barrels of Old Toby. The Hornblowers send back an acknowledgment that matches the order in every respect, except it adds one new term.",
     offer: {
-      label: "Purchase Order — Hornblower Leaf Co.",
+      label: "Purchase Order — The Prancing Pony, Bree",
       fields: [
-        ["From", "Tobold Hornblower II, Longbottom, The Shire"],
-        ["To", "Barliman Butterbur, The Prancing Pony, Bree"],
+        ["From", "Barliman Butterbur, The Prancing Pony, Bree"],
+        ["To", "Hornblower & Sons, Longbottom, The Shire"],
         ["Goods", "50 barrels Old Toby pipeweed, standard grade"],
         ["Price", "2 silver pennies per barrel"],
         ["Delivery", "FOB Longbottom, carrier at buyer's risk"],
@@ -24,10 +24,10 @@ var SCENARIOS = [
       ]
     },
     response: {
-      label: "Acknowledgment — The Prancing Pony",
+      label: "Acknowledgment — Hornblower & Sons",
       fields: [
-        ["From", "Barliman Butterbur, The Prancing Pony, Bree"],
-        ["To", "Tobold Hornblower II, Longbottom, The Shire"],
+        ["From", "Hornblower & Sons, Longbottom, The Shire"],
+        ["To", "Barliman Butterbur, The Prancing Pony, Bree"],
         ["Goods", "50 barrels Old Toby pipeweed, standard grade"],
         ["Price", "2 silver pennies per barrel"],
         ["Delivery", "FOB Longbottom, carrier at buyer's risk"],
@@ -38,11 +38,11 @@ var SCENARIOS = [
     questions: [
       {
         subsection: "2-207(1)",
-        text: "Does Butterbur's acknowledgment operate as an acceptance under 2-207(1)?",
+        text: "Does the Hornblowers' acknowledgment operate as an acceptance under 2-207(1)?",
         choices: [
           { text: "Yes — it is a definite expression of acceptance. The additional display-rack term does not prevent formation.", correct: true, feedback: "Masterful. Under 2-207(1), a definite and seasonable expression of acceptance operates as an acceptance even with additional terms. The mirror-image rule does not apply under Article 2." },
           { text: "No — the display-rack term changes the offer, so this is a counteroffer under the mirror-image rule.", correct: false, feedback: "Counselor, reconsider. The whole point of 2-207 is to reject the mirror-image rule for sales of goods. Additional terms do not prevent acceptance." },
-          { text: "No — the acknowledgment is expressly conditional on Hornblower's assent to the new term.", correct: false, feedback: "Look again. Butterbur's acknowledgment contains no 'expressly conditional' language. It simply adds a term. The 2-207(1) proviso does not apply." }
+          { text: "No — the acknowledgment is expressly conditional on Butterbur's assent to the new term.", correct: false, feedback: "Look again. The Hornblowers' acknowledgment contains no 'expressly conditional' language. It simply adds a term. The 2-207(1) proviso does not apply." }
         ]
       },
       {
@@ -51,7 +51,7 @@ var SCENARIOS = [
         choices: [
           { text: "Yes — both parties are merchants, the offer did not limit acceptance, the rack is not a material alteration, and no objection was given.", correct: true, feedback: "Precisely right. All four gates of 2-207(2) are open: merchant-to-merchant, no express limitation, non-material addition, no objection. The rack enters the contract." },
           { text: "No — additional terms never automatically become part of a contract.", correct: false, feedback: "That is the common law rule, not the UCC rule. Between merchants, 2-207(2) provides that additional terms do enter automatically — subject to three exceptions." },
-          { text: "Only if Hornblower expressly agrees to it.", correct: false, feedback: "Express assent is required only when one party is not a merchant. Here, both are merchants, so the automatic-entry rule of 2-207(2) applies." }
+          { text: "Only if Butterbur expressly agrees to it.", correct: false, feedback: "Express assent is required only when one party is not a merchant. Here, both are merchants, so the automatic-entry rule of 2-207(2) applies." }
         ]
       },
       {

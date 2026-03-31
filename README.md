@@ -12,6 +12,14 @@ Companion website for *Contract Law: Rules, Cases, and Problems* (2d ed., Caroli
 | **Video Lectures** | 119 videos across 6 YouTube playlists |
 | **Statutory Supplement** | R2d and UCC selected provisions |
 
+## Interactive Exercises
+
+| Exercise | Module | Description |
+|---|---|---|
+| **Bilbo's Contract** | 1–7 (Full) | Interactive contract with teaching notes, module color coding, learning objectives |
+| **Lonely Mountain Dispute** | 7 (Remedies) | Live classroom simulation with role rooms, negotiation timer, settlement term sheet |
+| **Battle of the Forms** | 2 (Acceptance) | UCC 2-207 learning game — 5 scenarios, 15 questions, mastery tracking |
+
 ## Oranburg Style
 
 This site uses the shared Oranburg Style system:
@@ -24,16 +32,15 @@ This site uses the shared Oranburg Style system:
 contracts-course/
 ├── assets/
 │   ├── css/
-│   │   ├── oranburg-style.css    # Shared foundation
-│   │   └── site.css              # Course-specific styles
+│   │   └── oranburg-style.css    # Shared foundation
 │   └── js/
 │       └── theme.js              # Theme toggle
-├── manuscript/
-│   ├── Contract Law 2d Ed.md     # Full casebook text
-│   ├── course-notes.yml          # Structured notes for site building
-│   ├── Oranburg's Contract Law 2d Ed Teachers Manual.md
-│   └── R2d and UCC Provisions for Contracts - Statutory Supplement.md
-├── index.html                    # Home page (to build)
+├── exercises/
+│   ├── battle-of-forms/          # UCC 2-207 learning game
+│   ├── bilbo-contract/           # Interactive contract analysis
+│   └── lonely-mountain-dispute/  # Remedies simulation
+├── manuscript/                   # Source texts (not served)
+├── index.html                    # Home page
 └── README.md
 ```
 
