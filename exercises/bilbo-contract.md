@@ -1,25 +1,22 @@
 <!--
-  TEACHING NOTES — Bilbo's Contract
+  BILBO'S CONTRACT — Teaching Exercise for Contract Law
 
-  This exercise uses Tolkien's fictional contract to teach real contract
-  law doctrine. Students find it engaging because they know the story,
-  and the contract is rich enough to support serious doctrinal analysis.
+  A fictional contract rich enough to support serious doctrinal analysis.
+  Students know the story; the contract teaches the law.
 
-  Works for: 1L Contracts, Business Law survey, Contract Drafting
+  Covers: Formation, Consideration, Interpretation, Defenses, Remedies,
+  Drafting, Agency, Third-Party Beneficiaries, Risk Allocation
 
-  Covers: Formation (offer, acceptance, consideration), Interpretation,
-  Defenses (capacity, duress, unconscionability), Remedies, Third-party
-  beneficiaries, Risk allocation, Limitation of liability
+  Recommended chapters: 1-7 (formation), 10-13 (defenses), 14-18
+  (interpretation), 24-27 (remedies)
 
-  Recommended pairing:
-  - Ch. 1-2 (What is Contract Law / What is a Contract)
-  - Ch. 3-6 (Mutual Assent)
-  - Ch. 7 (Consideration)
-  - Ch. 10-13 (Defenses)
-  - Ch. 24-27 (Remedies)
+  Podcast tie-ins: Ep. 1 (intro), 4 (bargains), 7 (acceptance),
+  8 (consideration), 11 (statute of frauds), 12-13 (defenses)
 
-  Podcast tie-in: Episodes 1 (Introduction), 4 (Bargains & Objective Theory),
-  7 (Acceptance), 8 (Consideration), 12 (Mistake), 13 (Fraud)
+  Pedagogical note: Deliberate interleaving — mixing doctrinal topics
+  within a single exercise — promotes deeper learning than blocking
+  topics sequentially. This exercise interleaves formation, interpretation,
+  defenses, and remedies within a single narrative context.
 -->
 
 # Bilbo's Contract
@@ -32,6 +29,10 @@
 
 **Made this day, the twenty-seventh of April in the Year of Our Shire Reckoning One Thousand Three Hundred and One,**
 
+<!-- The date is wrong. Tolkien's chronology places the Quest of Erebor
+     in Third Age 2941, which is approximately 1341 SR. The contract is
+     misdated by forty years. Clerical error or evidence of fraud? -->
+
 **BETWEEN:**
 
 **THORIN OAKENSHIELD**, King under the Mountain (in exile), and his Company of Thirteen Dwarves of good repute (hereinafter called "the Company"),
@@ -40,131 +41,123 @@
 
 **BILBO BAGGINS** of Bag End, Hobbiton in the Shire (hereinafter called "the Burglar" or "the Party of the Second Part").
 
+<!-- Agency problem: Thorin signs "for himself and the Company of
+     Thirteen" but has no power of attorney from the other 12 dwarves.
+     Under basic agency law, he can bind himself but not his companions
+     without their express or apparent authority. Fili, Kili, Bombur,
+     et al. are never shown agreeing to these specific terms. -->
+
 **WHEREAS** the Company is embarked upon a most perilous and profitable adventure to recover certain ancestral treasures currently in the unlawful possession of a certain Dragon;
+
+<!-- "Unlawful possession" — who decides this? Smaug took the treasure
+     by force, but no court has adjudicated ownership. Is this a fact
+     or a legal conclusion embedded in a recital? Recitals are not
+     operative provisions but courts use them for interpretation. -->
 
 **AND WHEREAS** the said Burglar has demonstrated certain useful skills in the gentle art of stealth, lock-picking, and the avoidance of unnecessary noise;
 
-<!-- TEACHING NOTE: The recitals ("WHEREAS" clauses) establish the context
-     and purpose of the contract. They are not operative provisions but can
-     be used to interpret ambiguous terms. Ask students: does the phrase
-     "unlawful possession" prejudge a legal question? Who decides whether
-     Smaug's possession is "unlawful"? Is this a fact or a legal conclusion? -->
+<!-- Authenticity problem: Bilbo had demonstrated NO such skills at the
+     time of signing. He was a perfectly ordinary, noisy hobbit. This
+     recital flatters him into a role he hadn't yet earned. Could this
+     be a misrepresentation that vitiates the contract? Or is it merely
+     Gandalf's puffery about Bilbo's potential? -->
 
 **NOW THEREFORE** the parties agree as follows:
 
 **1.** The Company hereby engages the Burglar as their official and sole **Burglar** for the duration of the expedition. The Burglar shall use his best endeavours (quietly and without unnecessary fuss) to enter, explore, and extract such treasure as may be found.
 
-<!-- TEACHING NOTE: "Best endeavours" vs. "reasonable endeavours" — a real
-     distinction in contract law. Best endeavours is the highest standard,
-     requiring the obligor to do everything in their power. Reasonable
-     endeavours allows cost-benefit balancing. Which did the dwarves intend?
-     Also: "for the duration of the expedition" — when does the expedition
-     end? Is it when they reach the Mountain? When Smaug is dead? When
-     the treasure is divided? This is a classic duration/termination ambiguity. -->
+<!-- "Best endeavours" is the highest contractual standard — do
+     everything in your power. "Reasonable endeavours" allows
+     cost-benefit balancing. The dwarves got the better deal here. -->
+
+<!-- "For the duration of the expedition" — when does it end? Reaching
+     the Mountain? Smaug's death? Treasure divided? Battle of Five
+     Armies concluded? This ambiguity matters when Bilbo tries to quit. -->
 
 **2.** In consideration of the services to be rendered, the Burglar shall receive **one-fourteenth (1/14th)** share of the total net profits of the adventure (after deduction of all expenses properly incurred by the Company). Said share to be paid in gold, silver, jewels, or other portable valuables of equivalent worth, at the sole discretion of the Company.
 
-<!-- TEACHING NOTE: This clause is a goldmine (literally).
+<!-- The oldest trick in Hollywood accounting. The Company alone decides
+     what expenses are "properly incurred." Thirteen ponies, lodgings
+     in Rivendell, replacing equipment lost to trolls — these could
+     zero out net profits entirely. Bilbo's share is potentially illusory. -->
 
-     Consideration: Is 1/14th share adequate consideration? The Company
-     has 13 members + Bilbo = 14, so equal shares. But Bilbo bears the
-     greatest risk (he's the one entering the dragon's lair). Is this
-     unconscionable? Or is the risk premium already priced in because
-     Bilbo has no capital contribution?
+<!-- "At the sole discretion of the Company" — they could pay him in
+     dragon teeth. No quality standard, no market-value benchmark,
+     no independent valuation. One-sided discretion clauses are
+     vulnerable to unconscionability challenges. -->
 
-     "Net profits" — who defines expenses? "Properly incurred" by whose
-     standard? The Company has "sole discretion" over the form of payment.
-     What if they pay in dragon teeth instead of gold?
-
-     Illusory promise? If the adventure produces no profit, Bilbo gets
-     nothing. But he still performed. Is this a requirements contract
-     (output-based)? An aleatory contract (dependent on uncertain event)?
-
-     Compare to: partnership profit-sharing, contingency fee arrangements,
+<!-- Compare to: partnership profit-sharing, contingency fee
+     arrangements, Hollywood net-profits deals (famously worthless),
      venture capital carry structures. -->
 
 **3.** The Company shall bear all reasonable travelling expenses, including but not limited to food, ponies (where available), boats, and the occasional rental of a wizard's fireworks for morale. In the unfortunate event of the Burglar's demise, the Company shall also cover the cost of a respectable burial (or cremation, should the circumstances involve dragons).
 
-<!-- TEACHING NOTE: "Including but not limited to" — ejusdem generis
-     applies here. The listed items (food, ponies, boats, fireworks) are
-     all tangible travel-related costs. Would medical expenses be covered?
-     Weapons? Replacement clothing after spider encounters?
+<!-- Ejusdem generis: the listed items are all tangible travel costs.
+     Would medical expenses be covered? Weapons? Replacement clothing
+     after spider encounters? The general term is limited by the
+     specific examples that precede it. -->
 
-     The burial clause is darkly funny but raises real issues: who are the
-     beneficiaries of a burial obligation? Bilbo can't enforce it if he's
-     dead. This is a third-party beneficiary problem — Bilbo's heirs
-     (the Sackville-Bagginses?) would be the intended beneficiaries.
+<!-- Burial clause: third-party beneficiary problem. Bilbo can't enforce
+     this if he's dead. His heirs (the Sackville-Bagginses?) are the
+     intended beneficiaries of this obligation. -->
 
-     "Respectable burial" — by whose cultural standard? Hobbit funerals
-     vs. Dwarvish customs vs. whatever is practical when you're standing
-     next to a dead dragon. -->
+<!-- "Respectable" by whose standard? Hobbit funerals involve seed-cake
+     and memorial gardens. Dwarvish custom involves stone tombs.
+     Practical reality near a dead dragon involves whatever is possible. -->
 
 **4.** The Burglar shall not be liable for any damage caused by trolls, goblins, spiders, wolves, eagles, or any other hostile parties encountered, nor for any loss of personal property except such as may be proven to result from his own gross negligence (defined as "being louder than a dwarvish marching band").
 
-<!-- TEACHING NOTE: This is a limitation of liability clause with a
-     contractual definition of gross negligence.
+<!-- The gross negligence definition sounds protective of Bilbo but
+     is actually a very LOW bar — dwarves are famously loud. Under
+     this definition, Bilbo bears liability for almost anything short
+     of shouting. A plaintiff-friendly court would likely strike this
+     as unconscionable. -->
 
-     The enumerated hazards (trolls, goblins, spiders, wolves, eagles)
-     create an interpretive question: is the list exhaustive or
-     illustrative? "Or any other hostile parties" makes it illustrative,
-     but does "hostile parties" include Smaug? Include Gollum (who isn't
-     exactly hostile at first)? Include the Elvenking (who imprisons
-     the dwarves but isn't "hostile" in the military sense)?
+<!-- Does "hostile parties" include Smaug (not listed by name)?
+     Gollum (not exactly hostile at first)? The Elvenking (who
+     imprisons the dwarves but isn't "hostile" militarily)?
+     The catch-all "any other hostile parties" probably covers
+     these, but ambiguity invites litigation. -->
 
-     The definition of gross negligence is contractually defined — parties
-     CAN define their own standards. But "louder than a dwarvish marching
-     band" is subjective and possibly unascertainable. Would a court
-     enforce this definition? Compare to real-world contractual definitions
-     of "material adverse change" or "commercially reasonable efforts."
-
-     Also: Bilbo actually DOES cause property loss when he steals the
-     Arkenstone and gives it to Bard. Is that gross negligence? Breach?
-     Or is it within the scope of his "best endeavours" to resolve the
-     standoff? This is the best exam question in the exercise. -->
+<!-- THE KEY EXAM QUESTION: Bilbo steals the Arkenstone and gives
+     it to Bard and the Elvenking as a bargaining chip. Is this
+     gross negligence? Breach? Or is it within the scope of his
+     "best endeavours" to resolve the standoff? This question
+     requires judgment, not mechanical rule-application. -->
 
 **5.** The Burglar agrees that he has read and understood the risks involved, including (but not limited to) being eaten, squashed, burned, enchanted, or otherwise inconvenienced, and hereby releases the Company from any and all claims arising from the ordinary hazards of dragon-slaying expeditions.
 
-<!-- TEACHING NOTE: This is an assumption-of-risk / exculpatory clause.
+<!-- Extraordinarily broad exculpatory clause covering death and
+     serious bodily harm. Most jurisdictions refuse to enforce blanket
+     releases for gross negligence or intentional misconduct. If a
+     dwarf pushed Bilbo toward Smaug, this clause provides no
+     protection whatsoever. -->
 
-     Key questions:
-     - Is this enforceable? Exculpatory clauses are disfavored in many
-       jurisdictions, especially for personal injury.
-     - "Ordinary hazards of dragon-slaying expeditions" — there IS no
-       ordinary for this. Can you assume a risk that has no established
-       baseline? Compare to extreme sports waivers.
-     - "Otherwise inconvenienced" — the most British understatement in
-       contract law. Being turned invisible by a magic ring is certainly
-       an "inconvenience." But does this clause cover it?
-     - Bilbo signed this before he had ANY experience with the risks.
-       Is there an informational asymmetry? The dwarves know far more
-       about what they're getting into. Does that affect enforceability?
+<!-- "Otherwise inconvenienced" — the most British understatement in
+     contract law. Finding a magic ring of invisibility is certainly
+     an "inconvenience." Being imprisoned by the Elvenking for weeks
+     is an "inconvenience." The word does no legal work. -->
 
-     Duress/undue influence: Bilbo signed after 13 dwarves showed up
-     uninvited at his house and Gandalf pressured him. Was this a free
-     and voluntary agreement? Compare to contracts signed under social
-     pressure or in high-pressure sales environments. -->
+<!-- Did Bilbo freely consent? 13 uninvited dwarves in his home,
+     Gandalf orchestrating the situation, social pressure to appear
+     brave, late at night after an unexpected dinner party. Compare
+     to high-pressure sales environments and contracts of adhesion. -->
 
 **6.** This contract may be terminated only by mutual consent or by the unfortunate consumption of either party by the aforesaid Dragon. In the latter case, the surviving party shall inherit the other's share.
 
-<!-- TEACHING NOTE: Termination and impossibility/impracticability.
+<!-- Bilbo CANNOT quit under this clause. There is no unilateral
+     termination right. He tries to leave multiple times in the
+     story. Is this enforceable? Specific performance of personal
+     services contracts is generally disfavored. -->
 
-     "Mutual consent" — what if one party wants out? Bilbo tries to quit
-     multiple times during the story. Can he? Is there a duty to perform
-     in good faith even when you want to terminate?
+<!-- "Consumption by the Dragon" — what about death by goblins,
+     spiders, or battle? Thorin dies at the Battle of Five Armies
+     but not by dragon. The clause doesn't cover this. -->
 
-     "Consumption by the Dragon" — this is frustration of purpose /
-     impossibility of performance as a termination trigger. But note:
-     the clause says the surviving party INHERITS the other's share.
-     This is a survivorship clause — common in partnership agreements.
-
-     What happens when Smaug dies but no party was consumed? The
-     termination clause doesn't address this. The contract has no
-     provision for what happens after success. This is a gap that
-     would require interpretation or implication of terms.
-
-     What about Thorin's death at the Battle of Five Armies? He dies
-     but not by dragon consumption. Does the contract terminate?
-     Does his share pass to his heirs or to the Company? -->
+<!-- "The surviving party shall inherit" — WHICH surviving party?
+     If Thorin dies and 12 dwarves survive, who inherits his interest?
+     The whole Company? Each dwarf individually? This is dangerously
+     vague for a survivorship clause. -->
 
 **IN WITNESS WHEREOF** the parties have set their hands and seals the day and year first above written.
 
@@ -180,118 +173,112 @@ Bilbo Baggins
 Gandalf the Grey
 (Wizard and Occasional Legal Advisor)
 
-<!-- TEACHING NOTE: Gandalf as witness raises interesting questions.
+<!-- Textbook conflict of interest. Gandalf organized the expedition,
+     recruited Bilbo, and has a direct stake in the outcome. A witness
+     should be a disinterested third party. "Occasional Legal Advisor"
+     — to which party? Can he advise both sides? His presence on the
+     signature block would be challenged in any Shire court. -->
 
-     1. Is Gandalf a party to the contract? He's listed as witness,
-        not as a party. But he brokered the deal, recommended Bilbo,
-        and benefits from the expedition's success. Is he an undisclosed
-        principal? A third-party beneficiary? An agent?
+---
 
-     2. "Occasional Legal Advisor" — does this create an attorney-client
-        relationship? If so, to which party? Can he advise both sides?
-        Conflict of interest?
+## What's Missing
 
-     3. Thorin signs "for himself and the Company of Thirteen." Does he
-        have authority to bind the other 12 dwarves? This is an agency
-        question — actual authority vs. apparent authority. Did Balin,
-        Dwalin, et al. authorize this? What if Bombur later says he
-        never agreed to give Bilbo a 1/14th share? -->
+<!-- These gaps make excellent drafting exercise prompts. -->
+
+| Gap | Why It Matters |
+|---|---|
+| No description of the specific treasure | "Certain ancestral treasures" is fatally vague; the Arkenstone alone later causes a war |
+| No IP / information clause | Who owns Thror's Map? Who owns intelligence gathered during the expedition? |
+| No Bag End protection clause | Bilbo's home is auctioned off in his absence; the contract says nothing about preserving his property |
+| No force majeure | Eagles, skin-changers, and magical rings are foreseeable in Middle-earth and unaddressed |
+| No dispute resolution | Arbitration, mediation, and the Elven courts of Rivendell go entirely unmentioned |
+| No choice of law | Parties from the Shire, Erebor (in exile), traveling through Rivendell, Mirkwood, Lake-town — which law applies? |
+| No non-compete | Nothing stops Bilbo from hiring out as burglar to a competing treasure-hunting party |
+| No confidentiality | The secret entrance to the Mountain is the Company's most valuable intelligence asset and it's unprotected |
 
 ---
 
 ## Exercises
 
-### Exercise 1: Formation (Chapters 1-6)
+### Exercise 1: Was a Valid Contract Formed?
 
-**Was a valid contract formed?** Analyze each element:
+<!-- Formation: Ch. 1-7. Interleaves offer, acceptance, consideration. -->
 
-a) **Offer:** Who made the offer — the dwarves or Gandalf? When did the offer occur — when they showed up at Bag End, or when the written contract was presented? Was Gandalf's earlier conversation with Bilbo a preliminary negotiation or an offer?
+a) **Offer:** Who made the offer — the dwarves or Gandalf? When? Was Gandalf's earlier conversation with Bilbo a preliminary negotiation or an offer? If Gandalf is the offeror, is he an agent of the Company? With what authority?
 
-b) **Acceptance:** Bilbo "eventually signs after some grumbling." Does grumbling negate acceptance? What if he signed only because 13 dwarves were in his house eating his food and he wanted them to leave? Compare *Lucy v. Zehmer* — the farmer who claimed he was joking when he signed a contract to sell his farm.
+b) **Acceptance:** Bilbo signed "after some grumbling." Does reluctance negate acceptance? He signed because 13 dwarves were in his house and he wanted them to leave — or because his Took side won out. Compare *Lucy v. Zehmer*: the farmer who claimed he was joking when he signed a contract to sell his farm. Under the objective theory, it doesn't matter what Bilbo subjectively felt. It matters what a reasonable person would understand from his conduct.
 
-c) **Consideration:** Bilbo promises burglar services. The Company promises 1/14th of profits. Is this sufficient consideration? What if the adventure fails and there are no profits — has Bilbo received nothing for genuine risk and labor?
+c) **Consideration:** Bilbo promises services; the Company promises 1/14th of profits. But if the adventure fails, Bilbo gets nothing for genuine risk and labor. Is this an illusory promise? An aleatory contract? Compare to contingency fee arrangements where the lawyer gets nothing if the case is lost.
 
-<!-- TEACHING NOTE: This maps directly to Ch. 3 (Bargains), Ch. 4 (Offers),
-     Ch. 6 (Acceptance), and Ch. 7 (Consideration). The Lucy v. Zehmer
-     connection is perfect for the objective theory of contract — it doesn't
-     matter what Bilbo subjectively felt; it matters what a reasonable
-     person would understand from his conduct (signing the document). -->
+### Exercise 2: Can Bilbo Avoid the Contract?
 
-### Exercise 2: Defenses (Chapters 10-13)
+<!-- Defenses: Ch. 10-13. Interleaves duress, mistake, unconscionability. -->
 
-**Could Bilbo avoid the contract?** Consider:
+a) **Duress:** 13 uninvited dwarves, a manipulative wizard, social pressure, late at night. Duress or merely aggressive recruitment? Where is the line?
 
-a) **Duress / Undue Influence:** 13 uninvited dwarves in your home, a wizard who manipulated the situation, social pressure to appear brave. Is this duress? Or merely hard bargaining?
+b) **Mistake:** Bilbo thought "burglar" meant something different than it turned out to mean. Mutual or unilateral mistake? The dwarves knew he had no experience — Gandalf told them he was a hobbit, not a thief. Does the recital ("demonstrated certain useful skills") constitute a misrepresentation?
 
-b) **Mistake:** Did Bilbo have a mistaken understanding of what "burglar" meant? He's a respectable hobbit who has never burgled anything. Mutual mistake vs. unilateral mistake — did the dwarves know Bilbo had no burglar experience?
+c) **Unconscionability:** Bilbo bears the greatest physical risk for an equal share. The Company has sole discretion over expense deductions and payment form. Procedurally unconscionable (unfair bargaining process)? Substantively unconscionable (unfair terms)? Both?
 
-c) **Unconscionability:** Bilbo bears the greatest physical risk (entering the dragon's lair alone) for an equal share. The Company has 13 members who share the remaining 13/14ths. Is this procedurally unconscionable (unfair process) or substantively unconscionable (unfair terms) or both?
+### Exercise 3: The Arkenstone Question
 
-d) **Capacity:** Bilbo is a hobbit of mature age and sound mind. But he arguably signed under the influence of Gandalf's persuasion and Dwarvish peer pressure, late at night, after an unexpected dinner party. Is this comparable to contracts signed under the influence?
+<!-- Interpretation + breach: Ch. 14-18, 24-27. The centerpiece question. -->
 
-### Exercise 3: Interpretation (Chapters 14-18)
+Bilbo discovers the Arkenstone — the most valuable single item in Smaug's hoard and the object Thorin desires above all else. Thorin is besieging Lake-town and refuses to negotiate. War between dwarves, men, and elves is imminent. Bilbo secretly takes the Arkenstone and gives it to Bard and the Elvenking as a bargaining chip to force Thorin to negotiate.
 
-**What do the terms actually mean?** Consider:
+a) Did Bilbo breach the contract? His obligation is to "enter, explore, and extract such treasure as may be found." He extracted it — and then gave it away. Is giving away Company property within the scope of "best endeavours"?
 
-a) **"Best endeavours"** — If Bilbo decides that the best way to resolve the siege of the Lonely Mountain is to give the Arkenstone to Bard and the Elvenking as a bargaining chip, is he using his "best endeavours" to "extract such treasure as may be found"? Or is he breaching the contract by giving away the Company's property?
+b) Was Bilbo acting as the Company's agent? If so, did he exceed his authority? Or was he exercising the kind of independent judgment that the "best endeavours" standard requires?
 
-b) **"Net profits"** — The adventure succeeds, but the treasure is contested by Men of Lake-town, Elves of Mirkwood, and Dwarves. After the Battle of Five Armies, the treasure is divided among multiple parties. Are the costs of the battle "expenses properly incurred by the Company"? Is the treasure that went to Bard and the Elvenking a deduction from gross profits?
+c) Thorin considers this betrayal and threatens Bilbo's life. If Bilbo had been killed, would the Company be liable under the contract's own terms? The exculpatory clause covers "ordinary hazards of dragon-slaying expeditions." Is being murdered by your own employer an "ordinary hazard"?
 
-c) **"Ordinary hazards of dragon-slaying expeditions"** — Was the Battle of Five Armies an "ordinary hazard"? What about Bilbo's encounter with Gollum and the magic ring — is finding an invisibility ring an ordinary hazard or an extraordinary windfall? Does the contract's exculpatory clause cover events that nobody could have foreseen?
+d) **The deeper question:** Could any contract term have specified in advance what Bilbo should do in this situation? Or does the Arkenstone problem require exactly the kind of practical judgment — *phronesis* — that no rule can encode?
 
-<!-- TEACHING NOTE: The Arkenstone question is the single best issue in
-     this exercise. It requires students to grapple with: the scope of
-     authority under an agency relationship, the meaning of "best
-     endeavours" when the principal's interests conflict, the duty of
-     loyalty vs. the practical judgment of the agent, and whether
-     Bilbo's action was a breach or a reasonable exercise of discretion.
+<!-- This is where the exercise connects to The Safety Machine's thesis.
+     The contract's terms are insufficient to resolve the question. Only
+     judgment can. A student who mechanically applies the provisions will
+     conclude Bilbo breached. A student who exercises practical wisdom
+     will recognize that his action saved lives, prevented war, and
+     preserved most of the treasure. The right answer is not in the
+     contract. It is in the character of the person reading it. -->
 
-     It also maps to the havruta teaching principle from The Safety
-     Machine: the right answer requires judgment, not rule-following.
-     A student who mechanically applies the contract terms will conclude
-     Bilbo breached. A student who exercises phronesis will recognize
-     that Bilbo's action saved lives, prevented a war between allies,
-     and ultimately preserved most of the treasure for the Company.
-     The contract's terms are insufficient to resolve the question.
-     Only judgment can. -->
+### Exercise 4: Remedies
 
-### Exercise 4: Remedies (Chapters 24-27)
+a) **Bilbo ultimately accepts only "two small chests, one filled with gold and one with silver."** This is far less than 1/14th of the hoard. Did he waive his right? Accord and satisfaction? Or did he exercise the judgment that taking more treasure than a pony could carry was pointless for a hobbit who just wanted to go home and have tea?
 
-**What happens when things go wrong?**
+b) **Thorin dies.** The termination clause covers only dragon consumption. What happens to Thorin's obligations? His share? Does the contract bind his heir Dain?
 
-a) **Thorin dies at the Battle of Five Armies.** The termination clause (Section 6) only covers consumption by the Dragon. Thorin was killed by goblins. Does the contract survive Thorin's death? Who inherits Thorin's obligations — his heir Dain? The remaining Company members?
+c) **Calculate damages.** If we assume Smaug's hoard is worth (in today's dollars) approximately $1 billion, Bilbo's 1/14th share would be roughly $71 million. He took perhaps $50,000 worth of gold and silver. What is his claim for the remainder? Does he have one? Should he?
 
-b) **Bilbo takes the Arkenstone.** Thorin considers this a fundamental breach and threatens Bilbo's life. If we treat this as a breach, what are the Company's damages? The value of the Arkenstone? Or the lost bargaining leverage? If we treat it as justified, what are Bilbo's defenses?
+### Exercise 5: Redraft the Contract
 
-c) **Bilbo ultimately accepts only "two small chests, one filled with gold and one with silver."** This is far less than 1/14th of Smaug's hoard. Did Bilbo waive his contractual right? Was there an accord and satisfaction? Or did Bilbo simply exercise practical judgment that taking more treasure than a pony could carry was pointless for a hobbit?
+You represent Bilbo. Rewrite the contract to protect his interests:
 
-<!-- TEACHING NOTE: The remedies exercise connects beautifully to the
-     question of what contracts are FOR. Bilbo's decision to take less
-     than his contractual entitlement is not a failure of contract law.
-     It is an exercise of the kind of judgment that the Safety Machine
-     argues institutions have lost. Bilbo looked at a mountain of gold
-     and asked: what do I actually need? The contract gave him a right.
-     Wisdom told him not to exercise it fully. That is phronesis. -->
+a) Guaranteed minimum payment regardless of net profits
+b) Independent auditor for expense deductions (not Company "sole discretion")
+c) Clear definition of "best endeavours" with safe-harbor provisions
+d) Unilateral termination right if danger materially exceeds what was disclosed
+e) Indemnification for injuries
+f) Dispute resolution by Gandalf (or by the Council of Elrond?)
+g) Choice of law (Shire law? Common law of Middle-earth?)
+h) Protection of Bag End during Bilbo's absence
 
-### Exercise 5: Drafting (Advanced)
+Now: you represent Thorin. What do you insist on keeping? What do you add?
 
-**Rewrite the contract.** You represent Bilbo. Redraft the contract to better protect his interests. Consider:
+---
 
-a) A minimum guaranteed payment regardless of whether the adventure produces profits
-b) A clearer definition of "expenses" and who controls spending decisions
-c) A termination clause that allows Bilbo to withdraw if the danger materially exceeds what was disclosed
-d) An indemnification clause requiring the Company to compensate Bilbo for injuries
-e) A dispute resolution mechanism (arbitration by Gandalf? By the Elvenking?)
+## The Bottom Line
 
-Then: you represent Thorin. What provisions would you insist on? A non-compete preventing Bilbo from working with other treasure-hunting parties? A confidentiality clause about the secret entrance? A clawback if Bilbo is found to have stolen from the Company?
+<!-- For class discussion or as a closing reflection prompt. -->
 
-<!-- TEACHING NOTE: The drafting exercise works best as a take-home
-     assignment or workshop. Students who have done Exercises 1-4 will
-     have identified the contract's gaps and ambiguities. Now they fix
-     them. This is where the course transitions from doctrine to practice.
+This contract is largely unenforceable: Thorin lacks authority to bind the other dwarves, the net profits definition is potentially illusory, the release clause is overbroad, the termination provision is one-sided, and the date is wrong by forty years. Bilbo signed it anyway.
 
-     Grading rubric should reward: (1) identifying the right risks,
-     (2) drafting clear, enforceable provisions, (3) balancing both
-     parties' interests, and (4) recognizing that some risks cannot be
-     fully allocated by contract — they require trust, judgment, and
-     the kind of relationship the dwarves and Bilbo ultimately build. -->
+That may be the most realistic thing about it. In practice, most contracts are signed by people who haven't read them carefully, negotiated by parties with unequal information, and enforced (or not) based on the relationship between the parties rather than the precise terms on the page.
+
+Bilbo's contract worked — not because of what it said, but because of who Bilbo turned out to be.
+
+<!-- Final teaching note: This is the point of the whole exercise. Contract
+     law provides the framework. Character provides the judgment. The
+     framework without the judgment produces the Deskilling Loop. The
+     judgment without the framework produces chaos. You need both.
+     Foundation AND scaffolding. Tikkun ha-guf AND tikkun ha-nefesh. -->

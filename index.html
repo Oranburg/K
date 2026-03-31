@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contract Law — Course Companion</title>
+  <meta name="description" content="Companion site for Contract Law: Rules, Cases, and Problems (2d ed.) by Seth C. Oranburg. Lectures, podcast, exercises, and assessment.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/oranburg-style.css">
+  <style>
+    .hero { text-align: center; padding: var(--space-3xl) var(--space-xl); background: var(--bg-secondary); }
+    .hero h1 { color: var(--text); font-size: 2.8rem; margin: 0 0 var(--space-xs); }
+    .hero-sub { font-family: var(--font-accent); font-size: 1.3rem; color: var(--muted); margin: 0 0 var(--space-sm); }
+    .hero-author { font-size: 0.9rem; color: var(--muted); margin: 0 0 var(--space-xl); }
+    .hero-links { display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap; }
+    .hero-btn { display: inline-block; padding: 0.6rem 1.5rem; border-radius: var(--radius-md); font-family: var(--font-headline); font-size: 0.95rem; text-decoration: none; transition: transform 0.2s; }
+    .hero-btn:hover { transform: translateY(-2px); }
+    .hero-btn-primary { background: var(--red-deep); color: #fff; }
+    .hero-btn-primary:hover { color: #fff; }
+    .hero-btn-secondary { background: var(--bg-soft); color: var(--accent); border: 1px solid var(--border); }
+
+    .content { max-width: var(--max-width); margin: 0 auto; padding: var(--space-xl); }
+
+    .module-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-lg); margin: var(--space-xl) 0; }
+    .module-card { background: var(--bg-secondary); border: 1px solid var(--border); border-top: 3px solid var(--accent-red); border-radius: 0 0 var(--radius-md) var(--radius-md); padding: var(--space-lg); }
+    .module-card h3 { color: var(--accent); margin: 0 0 var(--space-xs); font-size: 1.1rem; }
+    .module-label { font-family: var(--font-headline); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-red); }
+    .module-chapters { font-size: 0.85rem; color: var(--muted); margin: var(--space-sm) 0 0; }
+    .module-topics { font-size: 0.9rem; margin: var(--space-sm) 0 0; }
+
+    .resource-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-lg); margin: var(--space-xl) 0; }
+    .resource-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-lg); text-align: center; }
+    .resource-card h3 { color: var(--accent); font-size: 1rem; margin: 0 0 var(--space-sm); }
+    .resource-card p { color: var(--muted); font-size: 0.9rem; margin: 0 0 var(--space-md); }
+    .resource-card a { font-family: var(--font-headline); font-size: 0.85rem; }
+    .resource-stat { font-size: 1.8rem; font-weight: 700; color: var(--accent); display: block; margin-bottom: var(--space-xs); }
+
+    .exercise-callout { background: var(--bg-secondary); border-left: 4px solid var(--yellow); border-radius: 0 var(--radius-md) var(--radius-md) 0; padding: var(--space-xl); margin: var(--space-2xl) 0; }
+    .exercise-callout h3 { color: var(--yellow); margin: 0 0 var(--space-sm); }
+  </style>
+  <script>
+    (function(){try{var t=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',t==='light'||t==='dark'?t:'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}})();
+  </script>
+</head>
+<body>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="/" aria-current="page">Home</a></li>
+      <li><a href="https://oranburg.law/courses/contracts/">Course Page</a></li>
+      <li><a href="https://quaere-1cgr.onrender.com" target="_blank">Quaere</a></li>
+      <li><a href="https://oranburg.law">oranburg.law</a></li>
+      <li><button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to light mode"><svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Contract Law</h1>
+    <p class="hero-sub">Rules, Cases, and Problems</p>
+    <p class="hero-author">Second Edition &middot; Seth C. Oranburg &middot; Carolina Academic Press (2025)</p>
+    <div class="hero-links">
+      <a href="https://cap-press.com/books/isbn/9781531033804/Contract-Law-Second-Edition" target="_blank" class="hero-btn hero-btn-primary">Get the Casebook</a>
+      <a href="https://quaere-1cgr.onrender.com" target="_blank" class="hero-btn hero-btn-secondary">Self-Assess on Quaere</a>
+    </div>
+  </header>
+
+  <main class="content">
+
+    <h2>Course Modules</h2>
+    <p>Seven modules covering the lifecycle of a contractual relationship, from formation through remedies.</p>
+    <div class="module-grid">
+      <div class="module-card">
+        <span class="module-label">Module 1</span>
+        <h3>Foundations</h3>
+        <div class="module-topics">What is contract law? What is a contract?</div>
+        <div class="module-chapters">Chapters 1&ndash;2 &middot; Podcast Ep. 1&ndash;2</div>
+      </div>
+      <div class="module-card">
+        <span class="module-label">Module 2</span>
+        <h3>Mutual Assent</h3>
+        <div class="module-topics">Bargains, offers, termination, acceptance</div>
+        <div class="module-chapters">Chapters 3&ndash;6 &middot; Podcast Ep. 3&ndash;7</div>
+      </div>
+      <div class="module-card">
+        <span class="module-label">Module 3</span>
+        <h3>Consideration &amp; Alternatives</h3>
+        <div class="module-topics">Consideration, promissory estoppel, promissory restitution</div>
+        <div class="module-chapters">Chapters 7&ndash;9 &middot; Podcast Ep. 8&ndash;10</div>
+      </div>
+      <div class="module-card">
+        <span class="module-label">Module 4</span>
+        <h3>Defenses to Formation</h3>
+        <div class="module-topics">Statute of Frauds, mistake, improper bargaining, capacity</div>
+        <div class="module-chapters">Chapters 10&ndash;13 &middot; Podcast Ep. 11&ndash;13</div>
+      </div>
+      <div class="module-card">
+        <span class="module-label">Module 5</span>
+        <h3>Interpretation &amp; Terms</h3>
+        <div class="module-topics">Ambiguity, intrinsic &amp; extrinsic evidence, parol evidence, warranties</div>
+        <div class="module-chapters">Chapters 14&ndash;18 &middot; Podcast Ep. 14&ndash;17</div>
+      </div>
+      <div class="module-card">
+        <span class="module-label">Module 6</span>
+        <h3>Performance &amp; Breach</h3>
+        <div class="module-topics">Conditions, performance, repudiation, excuse, modification</div>
+        <div class="module-chapters">Chapters 19&ndash;23 &middot; Podcast Ep. 18&ndash;22</div>
+      </div>
+      <div class="module-card">
+        <span class="module-label">Module 7</span>
+        <h3>Remedies &amp; Third Parties</h3>
+        <div class="module-topics">Expectation damages, limitations, alternative remedies, third-party beneficiaries</div>
+        <div class="module-chapters">Chapters 24&ndash;28 &middot; Podcast Ep. 23&ndash;25</div>
+      </div>
+    </div>
+
+    <div class="exercise-callout">
+      <h3>Featured Exercise: Bilbo's Contract</h3>
+      <p>Analyze the Hobbit's burglar contract for formation issues, defenses, interpretation problems, and remedies. Five exercises covering the full curriculum &mdash; from whether a valid contract was formed to how you'd redraft it to protect your client.</p>
+      <p><em>"This contract is largely unenforceable. Bilbo signed it anyway. That may be the most realistic thing about it."</em></p>
+    </div>
+
+    <h2>Resources</h2>
+    <p>Everything you need for the course, in one place.</p>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <span class="resource-stat">25</span>
+        <h3>Podcast Episodes</h3>
+        <p>Organized: The Business Law Breakdown, Season 1</p>
+        <a href="https://bizlawbreakdown.podbean.com" target="_blank">Listen &rarr;</a>
+      </div>
+      <div class="resource-card">
+        <span class="resource-stat">119</span>
+        <h3>Video Lectures</h3>
+        <p>6 playlists covering contracts, formation, remedies, and review</p>
+        <a href="https://www.youtube.com/@BizLaw" target="_blank">Watch &rarr;</a>
+      </div>
+      <div class="resource-card">
+        <span class="resource-stat">676</span>
+        <h3>Assessment Questions</h3>
+        <p>Multiple-choice questions on Quaere, mapped to Bloom's Taxonomy</p>
+        <a href="https://quaere-1cgr.onrender.com" target="_blank">Practice &rarr;</a>
+      </div>
+      <div class="resource-card">
+        <span class="resource-stat">R2d + UCC</span>
+        <h3>Statutory Supplement</h3>
+        <p>Restatement (Second) and UCC Article 2 selected provisions</p>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p><a href="https://oranburg.law">oranburg.law</a> &middot; <a href="https://oranburg.law/courses/contracts/">Course Page</a> &middot; <a href="https://oranburg.law/scholarship/">Scholarship</a></p>
+    <p>&copy; 2026 Seth C. Oranburg. All rights reserved.</p>
+  </footer>
+
+  <script src="/assets/js/theme.js"></script>
+</body>
+</html>
