@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilbo's Contract — Interactive Contract Law Exercise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/oranburg-style.css">
+  <script>
+    (function(){try{var t=localStorage.getItem('theme');document.documentElement.setAttribute('data-theme',t==='light'||t==='dark'?t:'dark')}catch(e){document.documentElement.setAttribute('data-theme','dark')}})();
+  </script>
+  <style>
+    /* Module color coding */
+    .mod-FOUND { border-left-color: var(--blue-light) !important; }
+    .mod-ASSENT { border-left-color: var(--teal) !important; }
+    .mod-CONSID { border-left-color: #4ade80 !important; }
+    .mod-DEFNS { border-left-color: var(--yellow) !important; }
+    .mod-INTERP { border-left-color: #c084fc !important; }
+    .mod-PERF { border-left-color: #fb923c !important; }
+    .mod-REMED { border-left-color: var(--red-light) !important; }
+
+    .contract-wrapper { max-width: 800px; margin: 0 auto; padding: 0 var(--space-xl); }
+
+    /* Toolbar */
+    .toolbar { position: sticky; top: 46px; z-index: 50; background: var(--bg); border-bottom: 1px solid var(--border); padding: var(--space-sm) 0; margin-bottom: var(--space-xl); display: flex; gap: var(--space-sm); flex-wrap: wrap; align-items: center; }
+    .toolbar-label { font-family: var(--font-headline); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-right: var(--space-sm); }
+    .tool-btn { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.3rem 0.7rem; color: var(--muted); font-size: 0.8rem; font-family: var(--font-body); cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+    .tool-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .tool-btn.active { border-color: var(--accent); color: var(--accent); background: var(--bg-soft); }
+
+    /* Module legend */
+    .legend { display: none; flex-wrap: wrap; gap: var(--space-xs) var(--space-md); padding: var(--space-sm) 0; }
+    .legend.visible { display: flex; }
+    .legend-item { font-size: 0.75rem; display: flex; align-items: center; gap: 4px; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 2px; }
+
+    /* Contract sections */
+    .contract-section { border-left: 4px solid var(--border); padding: var(--space-md) var(--space-lg); margin: var(--space-md) 0; border-radius: 0 var(--radius-md) var(--radius-md) 0; cursor: pointer; transition: background 0.2s, border-left-color 0.3s; position: relative; }
+    .contract-section:hover { background: var(--bg-secondary); }
+    .contract-section.highlighted { background: var(--bg-secondary); }
+
+    .contract-section h2 { font-size: 1.3rem; border-bottom: none; padding-bottom: 0; margin-bottom: var(--space-sm); }
+    .contract-section h3 { font-size: 1.05rem; margin: var(--space-md) 0 var(--space-xs); color: var(--accent); }
+    .contract-section p { font-size: 0.95rem; margin: 0 0 var(--space-sm); }
+    .contract-section ol, .contract-section ul { font-size: 0.95rem; margin: 0 0 var(--space-sm); padding-left: var(--space-xl); }
+
+    /* Teaching drawer */
+    .teaching-drawer { display: none; background: var(--bg-soft); border-radius: var(--radius-md); padding: var(--space-md) var(--space-lg); margin-top: var(--space-sm); font-size: 0.85rem; line-height: 1.7; animation: fadeIn 0.2s; }
+    .teaching-drawer.open { display: block; }
+    .teaching-drawer h4 { font-family: var(--font-headline); color: var(--accent-red); font-size: 0.85rem; margin: 0 0 var(--space-xs); text-transform: uppercase; letter-spacing: 0.5px; }
+    .teaching-drawer .tag { display: inline-block; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 3px; padding: 1px 6px; font-size: 0.7rem; font-family: var(--font-mono); margin-right: 4px; margin-bottom: 4px; }
+    .teaching-drawer .note { color: var(--muted); margin-top: var(--space-sm); }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Preamble (not clickable) */
+    .contract-preamble { padding: var(--space-lg) 0; }
+    .contract-preamble h1 { font-size: 1.6rem; text-align: center; color: var(--text); }
+    .contract-preamble .date { text-align: center; font-family: var(--font-accent); color: var(--muted); margin-bottom: var(--space-xl); }
+    .contract-preamble .parties { font-size: 0.95rem; }
+
+    /* Signatures */
+    .signatures { margin-top: var(--space-2xl); padding-top: var(--space-lg); border-top: 1px solid var(--border); text-align: center; }
+    .signatures p { margin: var(--space-lg) 0 var(--space-xs); }
+    .sig-line { display: inline-block; width: 200px; border-bottom: 1px solid var(--muted); margin-bottom: var(--space-xs); }
+    .sig-title { font-size: 0.85rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <ul>
+      <li><a href="../../">Course Home</a></li>
+      <li><a href="https://oranburg.law/courses/contracts/">Contracts</a></li>
+      <li><a href="https://oranburg.law">oranburg.law</a></li>
+      <li><a href="https://oranburg.law/demos/ostracism-game/">Ostracism Game</a></li>
+      <li><a href="https://oranburg.law/demos/trade-secret-paradox/">Trade Secret Paradox</a></li>
+      <li><button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to light mode"><svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button></li>
+    </ul>
+  </nav>
+
+  <div class="contract-wrapper">
+    <div class="toolbar">
+      <span class="toolbar-label">View:</span>
+      <button class="tool-btn active" onclick="setMode('read')">Read</button>
+      <button class="tool-btn" onclick="setMode('teach')">Teaching Notes</button>
+      <button class="tool-btn" onclick="setMode('modules')">Color by Module</button>
+    </div>
+
+    <div class="legend" id="legend">
+      <div class="legend-item"><div class="legend-dot" style="background:var(--blue-light)"></div> Formation</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--teal)"></div> Mutual Assent</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#4ade80"></div> Consideration</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--yellow)"></div> Defenses</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#c084fc"></div> Interpretation</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#fb923c"></div> Performance</div>
+      <div class="legend-item"><div class="legend-dot" style="background:var(--red-light)"></div> Remedies</div>
+    </div>
+
+    <!-- Preamble -->
+    <div class="contract-preamble">
+      <h1>Contract of Engagement for Burglarious Services</h1>
+      <p class="date">Dated as of the Twenty-Seventh Day of April, in the Year of Shire Reckoning 1341</p>
+      <p class="parties">This Contract of Engagement for Burglarious Services (the "<strong>Agreement</strong>") is entered into by and between <strong>Thorin Oakenshield</strong>, acting for himself and purporting to act on behalf of the Company defined below, and <strong>Bilbo Baggins</strong> of Bag End, Hobbiton, in the Shire.</p>
+    </div>
+
+    <!-- Recitals -->
+    <div class="contract-section mod-FOUND" data-module="FOUND" data-chapters="1,14" data-los="C1.1c" data-note="Recitals establish purpose but are not operative provisions. 'Proposed chiefly by a wizard' — is Gandalf's recommendation a warranty or puffery? These recitals are unusual: they openly admit limited experience and characterize the agreement as recording 'misunderstandings, hopes, assumptions, boasts, and threats.' No real-world contract admits this." onclick="toggleDrawer(this)">
+      <h2>Recitals</h2>
+      <p><em>Whereas</em> Thorin Oakenshield and a company of thirteen dwarves are engaged in an expedition to recover treasure, heirlooms, and other property alleged to belong to them by inheritance, memory, grievance, or ancient right;</p>
+      <p><em>Whereas</em> Bilbo Baggins has been proposed, chiefly by a wizard, as a suitable person to serve as burglar, scout, and finder-out of hidden matters, despite limited prior experience in the trade;</p>
+      <p><em>Whereas</em> the parties desire to set forth in writing the terms upon which such services shall be rendered, compensated, disputed, excused, and otherwise regretted;</p>
+      <div class="teaching-drawer"></div>
+    </div>
+
+    <!-- Article 1 -->
+    <div class="contract-section mod-FOUND" data-module="FOUND" data-chapters="1,2,14" data-los="C5.1a,C1.1a" data-note="Defined terms do real legal work. 'Treasure' EXCLUDES 'sentimental complaints not readily convertible into money' — a contractual definition that resolves ambiguity before it arises. 'Net Proceeds' requires expenses to be 'reasonable, documented, actually incurred, and directly related' — four independent requirements, each of which prevents a different form of accounting manipulation. 'Material Breach' is defined to include specific examples — this is the rare contract that tells you what breach looks like before it happens." onclick="toggleDrawer(this)">
+      <h2>Article 1. Definitions</h2>
+      <h3>1.1 "Company"</h3>
+      <p>"<strong>Company</strong>" means Thorin Oakenshield and the twelve dwarves traveling with him: Balin, Dwalin, Fili, Kili, Dori, Nori, Ori, Oin, Gloin, Bifur, Bofur, and Bombur.</p>
+      <h3>1.2 "Burglar"</h3>
+      <p>"<strong>Burglar</strong>" means Bilbo Baggins, in his capacity as independent provider of burglarious, scouting, stealth, negotiating, and related services.</p>
+      <h3>1.3 "Expedition"</h3>
+      <p>"<strong>Expedition</strong>" means the journey to the Lonely Mountain for recovering treasure and heirlooms therefrom.</p>
+      <h3>1.4 "Treasure"</h3>
+      <p>Coin, plate, jewels, trade goods, heirlooms, weapons, works of art, portable valuables — but excludes personal clothing, ordinary travel gear, consumed provisions, and sentimental complaints not readily convertible into money.</p>
+      <h3>1.5 "Net Proceeds"</h3>
+      <p>Treasure actually recovered and reduced to possession, less only expenses that are reasonable, documented, actually incurred, and directly related to the Expedition.</p>
+      <h3>1.6 "Material Breach"</h3>
+      <p>A breach that substantially defeats the purpose of this Agreement, including willful betrayal, unjustified abandonment, deliberate concealment of material danger, or wrongful refusal to pay the Burglar's earned share.</p>
+      <div class="teaching-drawer"></div>
+    </div>
+
+    <!-- Article 2 -->
+    <div class="contract-section mod-FOUND" data-module="FOUND" data-chapters="1,2,3" data-los="C1.1c,C1.1d" data-note="Section 2.3 (independent contractor) prevents implied partnership — critical because a partnership would give Bilbo fiduciary duties AND give the dwarves unlimited liability for his acts. Section 2.4 (no guarantee) is a warranty disclaimer. Compare to UCC 2-316. 'Emotional stability within the Company' — Bilbo disclaims responsibility for Thorin's treasure-sickness." onclick="toggleDrawer(this)">
+      <h2>Article 2. Engagement and Status</h2>
+      <p><strong>2.1</strong> The Company engages the Burglar as its exclusive burglar, scout, finder of secret doors, observer of danger, occasional negotiator, and general provider of improbable good fortune in narrow circumstances.</p>
+      <p><strong>2.2</strong> The Burglar accepts, reserving always the right to grumble privately, long for his armchair, and object to adventures in principle while performing them in practice.</p>
+      <p><strong>2.3</strong> The Burglar is an <strong>independent contractor</strong> — not a servant, partner, joint venturer, or co-sovereign. Nothing shall require the Burglar to grow a beard, sing in company, or adopt dwarvish views regarding punctual revenge.</p>
+      <p><strong>2.4</strong> The Burglar does not warrant or guarantee success, silence, safe return, solvency, defeat of any dragon, or emotional stability within the Company.</p>
+      <div class="teaching-drawer"></div>
+    </div>
+
+    <!-- Article 5 (key section — compensation) -->
+    <div class="contract-section mod-CONSID" data-module="CONSID" data-chapters="7,8,24,25" data-los="C1.2a,C1.2b,C4.1a" data-note="KEY SECTION. Is 1/14 of net proceeds adequate consideration? Illusory if adventure fails? Compare to contingency fees. Section 5.4 (no discretionary dilution) prevents Hollywood accounting — 'no deduction merely because a dwarf claims an expense was glorious, traditional, morale-enhancing, or worth every copper at the time.' Section 5.5 gives the Burglar INSPECTION RIGHTS and construes ambiguity against the bookkeeper. This is sophisticated protective drafting." onclick="toggleDrawer(this)">
+      <h2>Article 5. Compensation</h2>
+      <p><strong>5.1</strong> The Burglar shall receive <strong>one-fourteenth (1/14)</strong> of the Net Proceeds.</p>
+      <p><strong>5.2</strong> Payment within a reasonable time after appraisal and division, accounting for safety, transport, and the temporary disorder that often follows dragons.</p>
+      <p><strong>5.3</strong> Payment in coin, jewels, plate, or negotiable valuables — but not items that are cursed, notoriously stolen beyond the scope of the Expedition, too heavy for a hobbit, or likely to attract a lawsuit on the road home.</p>
+      <p><strong>5.4 No Discretionary Dilution.</strong> No deduction merely because a dwarf claims an expense was glorious, traditional, morale-enhancing, or worth every copper at the time.</p>
+      <p><strong>5.5 Books and Inspection Rights.</strong> The Burglar may inspect the accounting. Ambiguity construed against the party who kept the books.</p>
+      <div class="teaching-drawer"></div>
+    </div>
+
+    <!-- Article 7 (company obligations — disclosure) -->
+    <div class="contract-section mod-DEFNS" data-module="DEFNS" data-chapters="12,13" data-los="C1.4a,C2.1a" data-note="Section 7.2 requires disclosure of 'any tendency by Thorin to become unreasonable in the presence of treasure.' This is MATERIAL. Treasure-sickness is a known risk. The Company's failure to disclose it could void the exculpatory provisions. Section 7.4 (ratification by conduct) solves the agency problem: any dwarf who accepts rescue, intelligence, or recovered treasure from Bilbo has ratified the contract and cannot later deny its terms." onclick="toggleDrawer(this)">
+      <h2>Article 7. Obligations of the Company</h2>
+      <p><strong>7.1 Support.</strong> Provide cooperation, information, access, and assistance reasonably necessary for the Burglar to perform.</p>
+      <p><strong>7.2 Disclosure.</strong> Disclose all known extraordinary dangers: dragons, blood-feuds, curses, disputed title claims, prior failed expeditions, unreliable maps, missing keys, and <em>any tendency by Thorin to become unreasonable in the presence of treasure</em>.</p>
+      <p><strong>7.3 Equalization of Risk.</strong> No plainly suicidal task unless the Company members who insist accept substantially similar danger.</p>
+      <p><strong>7.4 Authority and Ratification.</strong> Any dwarf who knowingly accepts the Burglar's benefits has ratified this Agreement.</p>
+      <div class="teaching-drawer"></div>
+    </div>
+
+    <!-- Article 9 (risk allocation — comprehensive) -->
+    <div class="contract-section mod-DEFNS" data-module="DEFNS" data-chapters="11,12,21,22" data-los="C1.4a,C1.4b,C2.4a,C2.4b" data-note="COMPREHENSIVE risk allocation covering R2d 152 (mistake), 261 (impossibility), 265 (frustration). Section 9.2 carves out misrepresentation — assumption of risk doesn't bar claims when the Company lied. 'Unduly cheerful assurance' is not a warranty. Section 9.6 is a genuine force majeure clause covering capture by trolls, goblins, spiders, or elves. Section 9.7 (duty to resume) is sophisticated — invoking force majeure pauses but doesn't end the obligation." onclick="toggleDrawer(this)">
+      <h2>Article 9. Risk Allocation and Excuses</h2>
+      <p><strong>9.1 Assumption of Risk.</strong> The Burglar acknowledges hazards including fire, claws, teeth, blades, poison, imprisonment, hunger, weather, sorcery, and group singing at unsafe volumes.</p>
+      <p><strong>9.2 Misrepresentation.</strong> Assumption of risk shall not bar relief where the Company materially misrepresented, half-truthed, recklessly omitted, or unduly cheerfully assured.</p>
+      <p><strong>9.3 Mistake.</strong> Mutual mistake as to a basic assumption may allow rescission or reformation.</p>
+      <p><strong>9.4 Frustration.</strong> Supervening events destroying the principal purpose may discharge remaining duties.</p>
+      <p><strong>9.5 Impossibility.</strong> Excused where objectively impossible by dragon-fire, enchantment, or loss of access.</p>
+      <p><strong>9.6 Force Majeure.</strong> Capture by trolls, goblins, spiders, or elves; pursuit by wargs; intervention by eagles; dragon attacks; battles involving multiple armies.</p>
+      <p><strong>9.7 Duty to Resume.</strong> Resume when able; use good-faith efforts to reduce avoidable delay.</p>
+      <div class="teaching-drawer"></div>
+    </div>
+
+    <!-- Article 11 (good faith — THE ARKENSTONE CLAUSE) -->
+    <div class="contract-section mod-PERF" data-module="PERF" data-chapters="19,20,21,24" data-los="C4.1a,C4.1b,C6.1a" data-note="THE ARKENSTONE CLAUSE. Section 11.3 directly addresses Bilbo's central moral dilemma: he may conceal treasure 'to the limited extent temporary concealment is reasonably necessary to prevent immediate violence or mutual ruin.' This is the contract's most sophisticated provision. It acknowledges that mechanical rule-following can produce disaster, and that good-faith judgment must sometimes override literal compliance. This is phronesis written into contract language — the connection to The Safety Machine's central thesis." onclick="toggleDrawer(this)">
+      <h2>Article 11. Good Faith and Special Covenants</h2>
+      <p><strong>11.1 Good Faith.</strong> The parties shall act in good faith and deal fairly.</p>
+      <p><strong>11.2 No Secret Redefinition.</strong> The Company shall not redefine Net Proceeds after Treasure is found, reclassify Treasure as morale, or characterize divisible wealth as sentimental rubble.</p>
+      <p><strong>11.3 No Opportunistic Concealment.</strong> The Burglar shall not conceal substantial recoveries for coercing renegotiation, <em>except to the limited extent temporary concealment is reasonably necessary to prevent immediate violence or mutual ruin</em>.</p>
+      <p><strong>11.4 Confidential Information.</strong> No disclosure of routes, secret entrances, keys, maps, passwords, or treasure intelligence except where reasonably necessary to save life, secure lawful assistance, or prevent a greater wrong.</p>
+      <div class="teaching-drawer"></div>
+    </div>
+
+    <!-- Article 13 (remedies) -->
+    <div class="contract-section mod-REMED" data-module="REMED" data-chapters="24,25,26,27" data-los="C2.5a,C2.5b,C2.5c" data-note="Section 13.2 (liquidated damages) is textbook — acknowledges difficulty of calculating actual damages, sets a formula (greater of 1/14 appraised value or 3x unreimbursed expenditures), and explicitly disclaims penalty status 'however emotionally deserved a penalty might be.' Section 13.3 (mitigation) — 'no party shall be required to mitigate by marching unarmed into a dragon's mouth.' Teaches that mitigation has limits." onclick="toggleDrawer(this)">
+      <h2>Article 13. Remedies</h2>
+      <p><strong>13.1 General.</strong> All remedies at law or equity: damages, restitution, specific relief, declaratory relief.</p>
+      <p><strong>13.2 Liquidated Damages for Wrongful Exclusion.</strong> Greater of: (a) 1/14 of fair appraised value, or (b) three times unreimbursed expenditures. Intended as a reasonable pre-estimate, not a penalty, however emotionally deserved a penalty might be.</p>
+      <p><strong>13.3 Mitigation.</strong> Reasonable efforts to mitigate, but no party required to mitigate by marching unarmed into a dragon's mouth.</p>
+      <div class="teaching-drawer"></div>
+    </div>
+
+    <!-- Article 15 (general provisions — interpretation) -->
+    <div class="contract-section mod-INTERP" data-module="INTERP" data-chapters="14,15,16,17" data-los="C3.1a,C3.1b,C5.1a" data-note="Section 15.1 (integration clause) supersedes 'all prior oral or written discussions, songs, boasts, assurances, or strategically vague wizardly remarks.' This IS the parol evidence rule in contract language — connects directly to Ch. 17. Section 15.3 (contra proferentem) construes ambiguity against the drafter. Section 15.6 (dispute resolution) is a real arbitration clause: one hobbit, one dwarf, one neutral elf — panel diversity as structural fairness." onclick="toggleDrawer(this)">
+      <h2>Article 15. General Provisions</h2>
+      <p><strong>15.1 Entire Agreement.</strong> Supersedes all prior oral or written discussions, songs, boasts, assurances, or strategically vague wizardly remarks.</p>
+      <p><strong>15.2 Amendments.</strong> Written and signed, except oral modifications in mortal peril may be enforceable if fully performed and proven by disinterested witnesses.</p>
+      <p><strong>15.3 Interpretation.</strong> Ambiguities construed against the drafter.</p>
+      <p><strong>15.5 Governing Law.</strong> Customs of the Shire, supplemented by the common law of the Free Peoples and equitable principles suitable to civilized folk.</p>
+      <p><strong>15.6 Dispute Resolution.</strong> Mediation first, then binding arbitration: one hobbit, one dwarf, and one neutral elf, each selected by fair means and with some reluctance.</p>
+      <p><strong>15.7 Venue.</strong> Reasonably accessible, substantially defensible, and to the extent practicable, free from dragons.</p>
+      <p><strong>15.10 Survival.</strong> Payment, indemnity, restitution, reliance, remedies, confidentiality, dispute resolution, and interpretation survive termination.</p>
+      <div class="teaching-drawer"></div>
+    </div>
+
+    <!-- Signatures -->
+    <div class="signatures">
+      <p><strong>THORIN OAKENSHIELD</strong><br>For Himself and the Company</p>
+      <div class="sig-line"></div>
+      <p><strong>BILBO BAGGINS</strong><br>The Burglar</p>
+      <div class="sig-line"></div>
+      <p><strong>GANDALF THE GREY</strong><br><span class="sig-title">Wizard, Recruiter, and Person Unhelpfully Certain It Will All Work Out</span></p>
+      <div class="sig-line"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p><a href="https://oranburg.law">oranburg.law</a> &middot; <a href="../../">Course Home</a> &middot; <a href="https://oranburg.law/scholarship/">Scholarship</a></p>
+    <p>&copy; 2026 Seth C. Oranburg. All rights reserved. Contract text is fictional and for educational purposes only.</p>
+  </footer>
+
+  <script src="../../assets/js/theme.js"></script>
+  <script>
+  var mode = 'read';
+
+  function setMode(m) {
+    mode = m;
+    document.querySelectorAll('.tool-btn').forEach(function(b) { b.classList.remove('active'); });
+    event.target.classList.add('active');
+    var legend = document.getElementById('legend');
+    var sections = document.querySelectorAll('.contract-section');
+
+    if (m === 'modules') {
+      legend.classList.add('visible');
+      sections.forEach(function(s) {
+        s.style.borderLeftColor = '';
+        s.classList.add('mod-' + s.dataset.module);
+      });
+    } else {
+      legend.classList.remove('visible');
+      sections.forEach(function(s) {
+        s.style.borderLeftColor = '';
+        // Remove all module classes
+        ['FOUND','ASSENT','CONSID','DEFNS','INTERP','PERF','REMED'].forEach(function(mod) {
+          if (m !== 'modules') s.classList.remove('mod-' + mod);
+        });
+      });
+    }
+
+    // Close all drawers when switching modes
+    if (m === 'read') {
+      document.querySelectorAll('.teaching-drawer').forEach(function(d) { d.classList.remove('open'); });
+    }
+  }
+
+  function toggleDrawer(section) {
+    if (mode === 'read') return; // In read mode, clicking does nothing
+    var drawer = section.querySelector('.teaching-drawer');
+    if (drawer.classList.contains('open')) {
+      drawer.classList.remove('open');
+      section.classList.remove('highlighted');
+      return;
+    }
+    // Close other drawers
+    document.querySelectorAll('.teaching-drawer.open').forEach(function(d) {
+      d.classList.remove('open');
+      d.parentElement.classList.remove('highlighted');
+    });
+    // Build drawer content
+    var chapters = section.dataset.chapters || '';
+    var los = section.dataset.los || '';
+    var note = section.dataset.note || '';
+    var mod = section.dataset.module || '';
+
+    var html = '';
+    if (mod) html += '<h4>Module: ' + mod + '</h4>';
+    if (chapters) {
+      html += '<div><strong>Casebook Chapters:</strong> ';
+      chapters.split(',').forEach(function(ch) {
+        html += '<span class="tag">Ch. ' + ch.trim() + '</span>';
+      });
+      html += '</div>';
+    }
+    if (los) {
+      html += '<div style="margin-top:6px"><strong>Learning Objectives:</strong> ';
+      los.split(',').forEach(function(lo) {
+        html += '<span class="tag">' + lo.trim() + '</span>';
+      });
+      html += '</div>';
+    }
+    if (note) html += '<div class="note">' + note + '</div>';
+
+    drawer.innerHTML = html;
+    drawer.classList.add('open');
+    section.classList.add('highlighted');
+  }
+  </script>
+</body>
+</html>
