@@ -508,6 +508,7 @@ function nextButton() {
 }
 
 function renderSummary() {
+  if(typeof KSync!=="undefined")KSync.complete({exerciseId:"battle-of-forms",exerciseTitle:"Battle of the Forms",chapterNum:2,score:state.score,total:state.total,mastery:state.mastery});
   var g = el('game');
   var pct = Math.round((state.score / state.total) * 100);
   var grade = pct >= 93 ? 'Master Merchant' : pct >= 80 ? 'Journeyman Trader' : pct >= 60 ? 'Apprentice Merchant' : 'Needs further study';

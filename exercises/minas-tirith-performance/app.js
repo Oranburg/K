@@ -261,6 +261,7 @@ function render(){
 }
 
 function renderSummary(){
+  if(typeof KSync!=="undefined")KSync.complete({exerciseId:"minas-tirith-performance",exerciseTitle:"Minas Tirith Performance",chapterNum:6,score:state.score,total:state.total,mastery:state.mastery});
   const pct = Math.round((state.score/(state.total||1))*100);
   el('game').innerHTML = `<section class="summary"><div class="intro-kicker">Complete</div><h2>Judgment Filed</h2><p>You completed <strong>${esc(EXERCISE.title)}</strong> with <strong>${state.score}/${state.total}</strong> (${pct}%).</p><div class="btn-row" style="justify-content:center"><button class="btn-primary" onclick="APP.restart()">Run Again</button></div></section>`;
 }

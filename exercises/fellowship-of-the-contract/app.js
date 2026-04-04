@@ -534,6 +534,7 @@ function renderArtifactModal(module) {
 }
 
 function renderSummary() {
+  if(typeof KSync!=="undefined")KSync.complete({exerciseId:"fellowship-of-the-contract",exerciseTitle:"Fellowship of the Contract",chapterNum:1,score:state.score,total:state.total});
   var pct = Math.round((state.score / (state.total || 1)) * 100);
   var rank = pct >= 90 ? 'Ring-Bearer of Doctrine' : pct >= 75 ? 'Counsel of Rivendell' : pct >= 60 ? 'Steward of Analysis' : 'Apprentice Advocate';
   el('game').innerHTML = '<section class="summary"><div class="intro-kicker">Complete</div><h2>' + rank + '</h2><p>You completed all Fellowship modules with a score of <strong>' + state.score + ' / ' + state.total + '</strong> (' + pct + '%).</p><div class="btn-row" style="justify-content:center"><button class="btn-primary" onclick="FEL.restart()">Run Again</button><button class="btn-secondary" onclick="FEL.home()">Back to Overview</button></div></section>';

@@ -88,6 +88,7 @@ function initTimer() {
 // ---------- Settlement Summary ----------
 
 function buildSummary() {
+  if(typeof KSync!=="undefined")KSync.complete({exerciseId:"lonely-mountain-dispute",exerciseTitle:"Whose Arkenstone?",chapterNum:7});
   var remedies = [];
   document.querySelectorAll('.remedy:checked').forEach(function (el) {
     remedies.push(el.value);
