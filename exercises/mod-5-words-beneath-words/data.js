@@ -48,9 +48,14 @@ var EXERCISE = {
   ],
   steps: [
     {
+      type: "info",
+      irac: "The Interpretation Hierarchy",
+      prompt: "Contract interpretation follows a careful hierarchy. First: read the text (intrinsic evidence — the four corners). Second: if the text is ambiguous, consider context (extrinsic evidence — course of dealing, trade usage, course of performance). Third: the parol evidence rule guards the boundary — prior inconsistent agreements are barred once a writing is integrated. Fourth: some terms are implied by law (warranties) whether the parties mentioned them or not. Every dispute in this module tests one rung of that hierarchy."
+    },
+    {
       type: "desk",
       irac: "Facts",
-      prompt: "Open all four artifacts. Each illustrates a different principle of contract interpretation."
+      prompt: "Open all four artifacts. Each illustrates a different principle of contract interpretation. Pay close attention to how meaning shifts depending on what evidence you consider."
     },
     {
       type: "mcq",
@@ -73,6 +78,14 @@ var EXERCISE = {
           feedback: "Both readings are linguistically valid. That's precisely what makes it ambiguous. Courts (and Gandalf) must consider extrinsic evidence — context, purpose, customs — to resolve which meaning the parties intended."
         }
       ]
+    },
+    {
+      type: "redline",
+      irac: "Ch 14: Finding the Ambiguity",
+      prompt: "Read the Moria inscription below. Click the word that creates the latent ambiguity — the word that means one thing to Gandalf (a command) and another to Frodo (a password):",
+      docText: "Speak, friend, and enter.",
+      target: "friend",
+      success: "Correct. The word 'friend' creates the latent ambiguity. Gandalf reads 'friend' as the addressee of a command: 'You who are a friend, speak [a password].' Frodo reads 'friend' as the content of the speech: 'Say the word friend [mellon].' Same word, two valid parsings. This is a latent ambiguity — it only appears when you try to apply the text to the situation. Compare Raffles v. Wichelhaus: the word 'Peerless' was unambiguous until two ships bore the same name. Courts resolve latent ambiguity by admitting extrinsic evidence of the parties' intent."
     },
     {
       type: "mcq",

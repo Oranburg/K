@@ -49,9 +49,14 @@ var EXERCISE = {
   ],
   steps: [
     {
+      type: "info",
+      irac: "Defenses Overview",
+      prompt: "A contract can be perfectly formed — offer, acceptance, consideration — and still be voidable. The defenses to formation ask: was consent truly voluntary and informed? This module examines four ways agreements fail: (1) the Statute of Frauds demands proof in writing; (2) mistake means the parties built on a false foundation; (3) improper bargaining means consent was corrupted; (4) incapacity means a party could not meaningfully consent at all. Each defense protects the same principle: contracts must be the product of genuine, informed agreement."
+    },
+    {
       type: "desk",
       irac: "Facts",
-      prompt: "Open all four artifacts. Each presents a contract or agreement that is defective in a different way."
+      prompt: "Open all four artifacts. Each presents a contract or agreement that is defective in a different way. Study the forgery, the Council's misunderstanding, Wormtongue's manipulation, and Pippin's vulnerability."
     },
     {
       type: "mcq",
@@ -151,6 +156,23 @@ var EXERCISE = {
       },
       success: "All four matched correctly. Each defense attacks contract formation from a different angle: the Statute of Frauds challenges the evidence of agreement (no genuine signature). Mistake challenges the parties' shared understanding (basic assumption was wrong). Undue influence challenges the quality of consent (will was overborne). Incapacity challenges the party's ability to consent at all (too young to understand consequences).",
       failure: "Review: Statute of Frauds = writing/signature requirement. Mistake = erroneous belief about basic assumption. Undue influence = exploitation of trust relationship. Incapacity = inability to understand consequences."
+    },
+    {
+      type: "scales",
+      irac: "Vulnerability Assessment",
+      prompt: "Each defense attacks a different aspect of consent. Check each factor that applies to the Théoden/Wormtongue scenario to assess how severely consent was compromised:",
+      factors: [
+        { id: "f1", label: "Relationship of trust — Wormtongue was Théoden's closest advisor" },
+        { id: "f2", label: "Vulnerability — Théoden was ill, weakened, and dependent" },
+        { id: "f3", label: "Isolation — Wormtongue excluded other counsel (Éowyn, Éomer)" },
+        { id: "f4", label: "Systematic persuasion — patient, repeated pressure over time" },
+        { id: "f5", label: "Benefit to influencer — Wormtongue served Saruman's interests, not Théoden's" }
+      ],
+      required: ["f1", "f2", "f3", "f4", "f5"],
+      labelLeft: "Minor Influence",
+      labelRight: "Severe Undue Influence",
+      success: "All five factors present — this is a textbook case of undue influence. R2d § 177 requires unfair persuasion of a party under domination or in a relationship of trust. Wormtongue's conduct satisfies every indicator courts examine: fiduciary-like relationship, vulnerability of the influenced party, exclusion of independent advice, systematic rather than spontaneous persuasion, and benefit flowing to the influencer rather than the influenced. Compare Odorizzi v. Bloomfield School District, where exhaustion and isolation combined with persistent pressure voided a resignation.",
+      failure: "All five factors apply. Wormtongue held a position of trust, Théoden was vulnerable, independent counsel was excluded, the persuasion was systematic, and Wormtongue benefited personally. Together, these create the strongest case for undue influence."
     },
     {
       type: "madlibs",

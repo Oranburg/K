@@ -49,9 +49,14 @@ var EXERCISE = {
   ],
   steps: [
     {
+      type: "info",
+      irac: "The Final Question",
+      prompt: "The contract was formed. The terms were set. Performance was rendered — or it wasn't. Now comes the final question of contract law: what remedy makes it right? The default answer is expectation damages — money that puts you where you would have been. But three limits constrain recovery: foreseeability, certainty, and mitigation. When money fails, equity offers alternatives: specific performance, injunctions, rescission. And sometimes, the people who benefit from a contract were never parties to it at all. This module brings the story full circle."
+    },
+    {
       type: "desk",
       irac: "Facts",
-      prompt: "Open all four artifacts. Each presents a different remedies question from the conclusion of the quest."
+      prompt: "Open all four artifacts. Each presents a different remedies question from the conclusion of the quest. Study the stakes at Mount Doom, the repair estimates for Minas Tirith, the Shire's damage categories, and the Red Book's question about beneficiaries."
     },
     {
       type: "mcq",
@@ -162,6 +167,22 @@ var EXERCISE = {
           feedback: "Third-party beneficiary doctrine does not require the beneficiary to exist at the time of contracting. A parent can contract for the benefit of an unborn child. The Fellowship contracted for the benefit of all future generations — their not-yet-existence does not defeat their intended-beneficiary status."
         }
       ]
+    },
+    {
+      type: "scales",
+      irac: "Remedy Selection",
+      prompt: "Frodo seeks a remedy for the Ring's damage. Check each factor that supports awarding specific performance (equitable relief) rather than money damages:",
+      factors: [
+        { id: "f1", label: "The harm is unique — no amount of money can replicate undoing the Ring's corruption" },
+        { id: "f2", label: "Money damages are inadequate — Frodo's suffering cannot be measured in gold" },
+        { id: "f3", label: "The subject matter is irreplaceable — passage to the Undying Lands has no substitute" },
+        { id: "f4", label: "Equity historically intervenes when legal remedies fail — courts of Chancery exist for this" }
+      ],
+      required: ["f1", "f2", "f3", "f4"],
+      labelLeft: "Money Damages",
+      labelRight: "Specific Performance",
+      success: "All factors point to equitable relief. R2d § 357 authorizes specific performance when 'damages would be inadequate to protect the expectation interest.' Frodo's case satisfies every criterion: the harm is unique (the Ring's corruption is sui generis), money is inadequate (no sum compensates for a shattered spirit), the remedy is irreplaceable (the Undying Lands cannot be purchased), and equity's historical purpose is precisely this — to provide justice when common law falls short. This is why courts of equity were created: for the cases money cannot reach.",
+      failure: "All four factors apply. The key question is always: can money make the injured party whole? When the answer is no — because the harm is unique, the subject irreplaceable, and the suffering immeasurable — equity intervenes with specific performance."
     },
     {
       type: "madlibs",

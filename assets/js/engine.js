@@ -332,6 +332,10 @@
       });
     }
 
+    // Expose score for export system
+    window._kScore = state.score;
+    window._kTotal = state.total;
+
     var pct = Math.round((state.score / (state.total || 1)) * 100);
 
     var navHtml = '';
@@ -353,11 +357,16 @@
         '<h2>Judgment Filed</h2>' +
         '<span class="summary-score">' + state.score + ' / ' + state.total + '</span>' +
         '<p>' + esc(EXERCISE.title) + ' — ' + pct + '%</p>' +
-        '<div class="btn-row" style="justify-content:center">' +
+        '<div id="summary-actions" class="btn-row" style="justify-content:center">' +
           '<button class="btn-secondary" onclick="APP.restart()">Run Again</button>' +
         '</div>' +
         navHtml +
       '</section>';
+
+    // Add export button if export.js is loaded
+    if (typeof KExport !== 'undefined') {
+      KExport.addButton(document.getElementById('summary-actions'));
+    }
   }
 
   // ── Public API ─────────────────────────────────────────────────────

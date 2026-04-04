@@ -48,9 +48,14 @@ var EXERCISE = {
   ],
   steps: [
     {
+      type: "info",
+      irac: "Performance Under Fire",
+      prompt: "Formation is only the beginning. Once a contract exists, the question shifts: was it performed? Performance law asks five questions: (1) What conditions must be met before a duty arises? (2) Was performance substantial enough, or was the breach material? (3) Can a party act on signals of future breach before it happens? (4) When does an unexpected event excuse performance entirely? (5) Can the parties change the deal mid-stream? The War of the Ring tests every one."
+    },
+    {
       type: "desk",
       irac: "Facts",
-      prompt: "Open all four artifacts. Each presents a different performance problem from the War of the Ring."
+      prompt: "Open all four artifacts. Each presents a different performance problem from the War of the Ring. Study Gandalf's conditional promise, Faramir's deviation, Gollum's treachery, and Aragorn's modified plan."
     },
     {
       type: "mcq",
@@ -161,6 +166,34 @@ var EXERCISE = {
           feedback: "Duress requires an improper threat (R2d § 175). Aragorn didn't threaten anyone — he proposed a modification. The difficult circumstances (Sauron's force) are not duress; they are the unanticipated circumstances that R2d § 89 contemplates. Alaska Packers v. Domenico involved coercion (sailors refused to work mid-season); Angel v. Murray involved fair modification due to changed conditions. This is closer to Angel."
         }
       ]
+    },
+    {
+      type: "dragdrop",
+      irac: "Synthesis: Match Doctrine to Scene",
+      prompt: "Each scene from the War of the Ring illustrates a core performance doctrine. Drag each scene to the correct legal concept:",
+      tokens: [
+        { id: "t1", label: "Gandalf arrives at dawn on the fifth day — triggering Théoden's charge" },
+        { id: "t2", label: "Faramir defends Osgiliath perfectly but releases the Ring-bearer" },
+        { id: "t3", label: "Gollum whispers and leads toward Shelob before his promise is due" },
+        { id: "t4", label: "Denethor's purpose collapses when he sees Sauron's overwhelming force" },
+        { id: "t5", label: "Aragorn proposes a diversionary suicide mission instead of a direct assault" }
+      ],
+      buckets: [
+        { id: "condition", label: "Condition Precedent (R2d § 224)" },
+        { id: "material", label: "Materiality of Breach (R2d § 241)" },
+        { id: "repudiation", label: "Anticipatory Repudiation (R2d § 250)" },
+        { id: "frustration", label: "Frustration of Purpose (R2d § 265)" },
+        { id: "modification", label: "Modification (R2d § 89)" }
+      ],
+      requiredAssignments: {
+        "t1": "condition",
+        "t2": "material",
+        "t3": "repudiation",
+        "t4": "frustration",
+        "t5": "modification"
+      },
+      success: "All five matched. Gandalf's timed arrival is a condition precedent — the event that triggers Théoden's duty to charge. Faramir's deviation is a materiality question — he performed substantially but missed the critical term. Gollum's conduct is anticipatory repudiation — his actions signal breach before performance is due. Denethor's collapse is frustration of purpose — a supervening event destroys the reason for his contract. Aragorn's new plan is a modification — supported by new consideration (the suicide mission) and fair in view of unanticipated circumstances.",
+      failure: "Match by function: What triggers a duty? (Condition.) What evaluates deviation? (Materiality.) What allows early action on signals of breach? (Repudiation.) What excuses when purpose is destroyed? (Frustration.) What changes the deal mid-stream? (Modification.)"
     },
     {
       type: "madlibs",
