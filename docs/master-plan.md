@@ -185,42 +185,56 @@ Every exercise uses the same minimal HTML shell:
 - [x] `progress-sync.js` — localStorage write on completion
 - [x] Roadmap styles in `oranburg-style.css`
 
-### Phase 2: Engine & Mothball
-- [ ] Archive old exercises to `archive/` directory
-- [ ] Extract shared engine → `assets/js/engine.js`
-- [ ] Extract engine styles → `assets/css/engine.css`
-- [ ] Create exercise HTML template
-- [ ] Verify engine works with one test exercise
+### Phase 2: Engine & Mothball ✅ DONE
+- [x] Archive old exercises to `archive/exercises/`
+- [x] Extract shared engine → `assets/js/engine.js`
+- [x] Extract engine styles → `assets/css/engine.css`
+- [x] Create exercise template → `exercises/_template/`
 
-### Phase 3: Seven A++ Exercises (one per module)
-Build the baseline — one excellent exercise per module, following the story arc:
-- [ ] Ch 1: The Shire Archives (Ordinary World)
-- [ ] Ch 6: Mirkwood Merchants (Battle of Forms — richest formation doctrine)
-- [ ] Ch 7: The Dragon's Hoard (Consideration — core doctrine)
-- [ ] Ch 10: Isengard Forgery (Statute of Frauds)
-- [ ] Ch 17: The Breaking (Parol Evidence Rule — most tested topic)
-- [ ] Ch 20: Faramir's Choice (Substantial Performance)
-- [ ] Ch 24: The Crack of Doom (Expectation Damages — Hadley v. Baxendale)
+### Phase 3: Seven Module-Level Activities ⬅ PRIORITY — BUILD FIRST
 
-Each needs:
-1. Read the textbook chapter first (manuscript/)
-2. Read the teacher manual for learning objectives and IRAC solutions
-3. Doctrine primer ("What you need to know") before the activity
-4. Interactive exercise with 4–6 graded steps
-5. Synthesis/verdict step requiring legal analysis (min 20 chars)
-6. Scoring with doctrinal explanations
-7. KSync.complete() call
-8. Prev/next chapter navigation
+**Module activities are MORE IMPORTANT than chapter activities.** Each module activity is a larger, integrated exercise that spans the entire module's doctrine — a complete story arc within the Hero's Journey stage. These are the anchor exercises students must complete; chapter exercises are supplementary deep-dives.
 
-### Phase 4: Backfill Remaining 21 Exercises
-Build remaining chapters to the same standard, prioritizing early chapters:
-- [ ] Module 1: Ch 2
-- [ ] Module 2: Ch 3, 4, 5
-- [ ] Module 3: Ch 8, 9
-- [ ] Module 4: Ch 11, 12, 13
-- [ ] Module 5: Ch 14, 15, 16, 18
-- [ ] Module 6: Ch 19, 21, 22, 23
-- [ ] Module 7: Ch 25, 26, 27, 28
+Module activities follow the Hobbit→LOTR chronology and use the multi-scenario engine pattern (similar to the old `battle-of-forms` SCENARIOS format, but now powered by the shared engine).
+
+Each module activity:
+- Spans the full narrative arc for that Hero's Journey stage
+- Covers ALL chapters in the module through an integrated scenario
+- Uses 8–12 graded steps (longer than chapter exercises)
+- Requires synthesis across multiple doctrines
+- Lives in `exercises/mod-{N}-{slug}/`
+
+| Module | Hero's Journey | Activity Name | Story Arc | Chapters Covered |
+|--------|---------------|---------------|-----------|-----------------|
+| 1 | Ordinary World | **There and Back Again** | Bilbo's life before and during the contract — from peaceful Shire to signing the Burglar Agreement | Ch 1–2: promises, contract elements |
+| 2 | Call to Adventure | **The Road Goes Ever On** | The journey from Bag End through trolls, riddles, and Mirkwood trade — every step requires agreement | Ch 3–6: mutual assent, offers, termination, acceptance |
+| 3 | Tests & Allies | **The Dragon's Price** | The Lonely Mountain quest — what was bargained for, what was promised, what was owed | Ch 7–9: consideration, estoppel, restitution |
+| 4 | Crossing the Threshold | **Shadows Over Middle-earth** | The corruption of agreements — forged documents, mistaken beliefs, overborne wills, rash oaths | Ch 10–13: SoF, mistake, improper bargaining, incapacity |
+| 5 | Inmost Cave | **The Words Beneath the Words** | From Moria's riddle-door through Galadriel's visions to the Fellowship's breaking — what the agreement really means | Ch 14–18: ambiguity, evidence, parol evidence, warranties |
+| 6 | The Ordeal | **The War of the Ring** | From Helm's Deep to the Black Gate — performance under impossible conditions, betrayal, excuse, and adaptation | Ch 19–23: conditions, performance, repudiation, excuse, modification |
+| 7 | Return with Elixir | **The Return of the King** | Mount Doom to the Grey Havens — making Middle-earth whole, measuring what was lost, and who benefits | Ch 24–28: damages, limits, alternatives, TPBs |
+
+Process for each module activity:
+1. Read ALL textbook chapters in the module
+2. Read teacher manual for learning objectives across those chapters
+3. Design a multi-scenario narrative that integrates the doctrines
+4. Build 8–12 graded steps mixing all step types
+5. Include cross-doctrine synthesis questions
+6. Fire KSync.complete() for each chapter covered
+
+### Phase 4: 28 Chapter-Level Exercises
+
+After the 7 module activities are complete, build individual chapter exercises as supplementary deep-dives. These are shorter (4–6 steps), focused on one doctrine, and follow the chapter-by-chapter story beats already defined.
+
+Priority: early chapters first (Module 1, then 2, etc.)
+
+Each chapter exercise:
+1. Read the specific textbook chapter
+2. Doctrine primer before the activity
+3. 4–6 graded steps
+4. KSync.complete() call
+5. Prev/next chapter navigation
+6. Lives in `exercises/{slug}/`
 
 ### Phase 5: Contracts Tome
 - [ ] Extract R2d sections from statutory supplement
