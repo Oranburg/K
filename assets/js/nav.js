@@ -33,7 +33,6 @@
       '<ul>' +
         '<li><a href="' + (p || '/') + '">Course Home</a></li>' +
         '<li><a href="https://oranburg.law/courses/contracts/">Course Page</a></li>' +
-        '<li><a href="https://quaere-1cgr.onrender.com" target="_blank" rel="noopener noreferrer">Quaere</a></li>' +
         '<li><a href="https://oranburg.law">oranburg.law</a></li>' +
         '<li>' +
           '<button class="theme-toggle" onclick="toggleTheme()" aria-label="Switch to light mode">' +
