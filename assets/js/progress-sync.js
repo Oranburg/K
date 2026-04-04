@@ -87,6 +87,23 @@
     renderEmailPrompt();
   }
 
+  // Learning objectives cache (loaded once from data/learning-objectives.json)
+  var _loData = null;
+  var _loLoading = false;
+
+  function loadLOs(callback) {
+    if (_loData) { callback(_loData); return; }
+    if (_loLoading) { callback(null); return; }
+    _loLoading = true;
+    // Determine base path from nav-depth meta tag
+    var depth = document.querySelector('meta[name="nav-depth"]');
+    var prefix = depth && depth.content === '2' ? '../../' : '';
+    fetch(prefix + 'data/learning-objectives.json')
+      .then(function (r) { return r.json(); })
+      .then(function (data) { _loData = data; callback(data); })
+      .catch(function () { callback(null); });
+  }
+
   /**
    * Send completion data to Quaere. Call from renderSummary().
    */
@@ -101,31 +118,47 @@
     var email = getEmail();
     if (!email) return;
 
-    var body = {
-      studentEmail: email,
-      courseCode: COURSE_CODE,
-      moduleId: opts.exerciseId || "unknown",
-      chapterNum: opts.chapterNum || 0,
-      chapterTitle: opts.exerciseTitle || opts.exerciseId || "Unknown Exercise",
-      completed: true,
-      scores: {
-        score: opts.score || 0,
-        total: opts.total || 0,
-        percent: opts.total ? Math.round((opts.score / opts.total) * 100) : 0,
-        mastery: opts.mastery || null,
-      },
-      counselNotes: opts.notes || null,
-    };
+    // Load LO data and include in sync payload
+    loadLOs(function (loData) {
+      var loMeta = null;
+      if (loData && loData.exercises && opts.exerciseId) {
+        var exLO = loData.exercises[opts.exerciseId];
+        if (exLO) {
+          loMeta = {
+            chapter: exLO.chapter,
+            moduleCode: loData.module_codes ? loData.module_codes[String(exLO.chapter)] : null,
+            steps: exLO.steps
+          };
+        }
+      }
 
-    try {
-      fetch(QUAERE_API, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      }).catch(function () {});
-    } catch (e) {
-      // Silent fail
-    }
+      var body = {
+        studentEmail: email,
+        courseCode: COURSE_CODE,
+        moduleId: opts.exerciseId || "unknown",
+        chapterNum: opts.chapterNum || 0,
+        chapterTitle: opts.exerciseTitle || opts.exerciseId || "Unknown Exercise",
+        completed: true,
+        scores: {
+          score: opts.score || 0,
+          total: opts.total || 0,
+          percent: opts.total ? Math.round((opts.score / opts.total) * 100) : 0,
+          mastery: opts.mastery || null,
+        },
+        learningObjectives: loMeta,
+        counselNotes: opts.notes || null,
+      };
+
+      try {
+        fetch(QUAERE_API, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(body),
+        }).catch(function () {});
+      } catch (e) {
+        // Silent fail
+      }
+    });
   }
 
   // Auto-render email bar on load

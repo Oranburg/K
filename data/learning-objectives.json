@@ -1,0 +1,358 @@
+{
+  "_comment": "Quaere Learning Objective tags for K exercises. Keyed by exercise slug. Each step entry maps step index to LO codes, cognitive process, and knowledge dimension.",
+  "_schema": {
+    "lo": "L3 indicator codes from Quaere contracts-objectives-v2",
+    "cp": "Cognitive process: remember, understand, apply, analyze, evaluate, create",
+    "kd": "Knowledge dimension: factual, conceptual, procedural, metacognitive"
+  },
+  "module_codes": {
+    "1": "FOUND", "2": "FOUND",
+    "3": "ASSENT", "4": "ASSENT", "5": "ASSENT", "6": "ASSENT",
+    "7": "CONSID", "8": "CONSID", "9": "CONSID",
+    "10": "DEFNS", "11": "DEFNS", "12": "DEFNS", "13": "DEFNS",
+    "14": "INTERP", "15": "INTERP", "16": "INTERP", "17": "INTERP", "18": "INTERP",
+    "19": "PERF", "20": "PERF", "21": "PERF", "22": "PERF", "23": "PERF",
+    "24": "REMED", "25": "REMED", "26": "REMED", "27": "REMED", "28": "REMED"
+  },
+  "exercises": {
+    "shire-archives": {
+      "chapter": 1,
+      "steps": {
+        "1": { "lo": ["C1.1a"], "cp": "understand", "kd": "conceptual" },
+        "2": { "lo": ["C1.1a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C1.1a", "C5.1a"], "cp": "apply", "kd": "conceptual" },
+        "4": { "lo": ["C1.1a", "C1.1c", "C1.1d"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "burglary-agreement": {
+      "chapter": 2,
+      "steps": {
+        "1": { "lo": ["C1.1a", "C1.1c"], "cp": "understand", "kd": "conceptual" },
+        "2": { "lo": ["C1.1c", "C1.1d"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C1.1a"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C1.1a", "C1.1c", "C1.1d"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "unexpected-party": {
+      "chapter": 3,
+      "steps": {
+        "1": { "lo": ["C1.1c"], "cp": "understand", "kd": "conceptual" },
+        "2": { "lo": ["C1.1c"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C1.1c"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C1.1c"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "troll-campfire": {
+      "chapter": 4,
+      "steps": {
+        "1": { "lo": ["C1.1c"], "cp": "understand", "kd": "factual" },
+        "2": { "lo": ["C1.1c"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C1.1c", "C1.3a"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C1.1c", "C1.3a"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "riddles-in-the-dark": {
+      "chapter": 5,
+      "steps": {
+        "1": { "lo": ["C1.3a"], "cp": "understand", "kd": "factual" },
+        "2": { "lo": ["C1.3a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C1.3a"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C1.3a"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "mirkwood-merchants": {
+      "chapter": 6,
+      "steps": {
+        "1": { "lo": ["C1.1c"], "cp": "understand", "kd": "factual" },
+        "2": { "lo": ["C1.1c"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C1.1c"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C1.1c"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "dragons-hoard": {
+      "chapter": 7,
+      "steps": {
+        "1": { "lo": ["C1.2a"], "cp": "apply", "kd": "conceptual" },
+        "2": { "lo": ["C1.2a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C1.2a"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C1.2a"], "cp": "apply", "kd": "conceptual" },
+        "5": { "lo": ["C1.2a"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "arkenstone-betrayal": {
+      "chapter": 8,
+      "steps": {
+        "1": { "lo": ["C1.2a", "C2.5b"], "cp": "apply", "kd": "conceptual" },
+        "2": { "lo": ["C2.5b"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C2.5b"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C1.2a", "C2.5b"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "battle-of-five-armies": {
+      "chapter": 9,
+      "steps": {
+        "1": { "lo": ["C2.5c"], "cp": "apply", "kd": "conceptual" },
+        "2": { "lo": ["C2.5c"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C2.5c"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C1.2a", "C2.5b", "C2.5c"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "isengard-forgery": {
+      "chapter": 10,
+      "steps": {
+        "1": { "lo": ["C1.4a"], "cp": "understand", "kd": "factual" },
+        "2": { "lo": ["C1.4a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C1.4a"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C1.4a"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "council-of-elrond": {
+      "chapter": 11,
+      "steps": {
+        "1": { "lo": ["C1.4a", "C1.4b"], "cp": "understand", "kd": "conceptual" },
+        "2": { "lo": ["C1.4b"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C1.4b"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C1.4a", "C1.4b"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "golden-hall": {
+      "chapter": 12,
+      "steps": {
+        "1": { "lo": ["C1.4a"], "cp": "understand", "kd": "conceptual" },
+        "2": { "lo": ["C1.4a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C1.4a"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C1.4a"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "pippin-palantir": {
+      "chapter": 13,
+      "steps": {
+        "1": { "lo": ["C1.4a"], "cp": "understand", "kd": "conceptual" },
+        "2": { "lo": ["C1.4a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C1.4a"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C1.4a"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "doors-of-moria": {
+      "chapter": 14,
+      "steps": {
+        "1": { "lo": ["C3.1a"], "cp": "understand", "kd": "conceptual" },
+        "2": { "lo": ["C3.1a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C3.1a"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C3.1a"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "balin-tomb": {
+      "chapter": 15,
+      "steps": {
+        "1": { "lo": ["C3.1a", "C3.1b"], "cp": "understand", "kd": "conceptual" },
+        "2": { "lo": ["C3.1a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C3.1a", "C3.1b"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C3.1a", "C3.1b"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "galadriel-mirror": {
+      "chapter": 16,
+      "steps": {
+        "1": { "lo": ["C3.1a"], "cp": "understand", "kd": "conceptual" },
+        "2": { "lo": ["C3.1a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C3.1a"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C3.1a"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "breaking-of-fellowship": {
+      "chapter": 17,
+      "steps": {
+        "1": { "lo": ["C3.1a", "C3.1b"], "cp": "understand", "kd": "factual" },
+        "2": { "lo": ["C3.1b"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C3.1a", "C3.1b"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C3.1a", "C3.1b"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "rohan-smithy": {
+      "chapter": 18,
+      "steps": {
+        "1": { "lo": ["C3.1a"], "cp": "understand", "kd": "factual" },
+        "2": { "lo": ["C3.1a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C3.1a"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C3.1a"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "helms-deep": {
+      "chapter": 19,
+      "steps": {
+        "1": { "lo": ["C2.3a"], "cp": "apply", "kd": "conceptual" },
+        "2": { "lo": ["C2.3a", "C2.3b"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C2.3a", "C2.3b"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C2.3a", "C2.3b"], "cp": "evaluate", "kd": "conceptual" },
+        "5": { "lo": ["C2.3a", "C2.3b"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "faramir-osgiliath": {
+      "chapter": 20,
+      "steps": {
+        "1": { "lo": ["C2.3c"], "cp": "apply", "kd": "conceptual" },
+        "2": { "lo": ["C2.3c"], "cp": "analyze", "kd": "conceptual" },
+        "3": { "lo": ["C2.3c"], "cp": "evaluate", "kd": "metacognitive" },
+        "4": { "lo": ["C2.3c"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "shelob-lair": {
+      "chapter": 21,
+      "steps": {
+        "1": { "lo": ["C2.3c", "C2.4a"], "cp": "apply", "kd": "conceptual" },
+        "2": { "lo": ["C2.4a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C2.3c", "C2.4a"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C2.3c", "C2.4a"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "denethor-madness": {
+      "chapter": 22,
+      "steps": {
+        "1": { "lo": ["C2.4a", "C2.4b"], "cp": "apply", "kd": "conceptual" },
+        "2": { "lo": ["C2.4b"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C2.4a", "C2.4b"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C2.4a", "C2.4b"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "black-gate": {
+      "chapter": 23,
+      "steps": {
+        "1": { "lo": ["C2.2b", "C4.1a"], "cp": "apply", "kd": "conceptual" },
+        "2": { "lo": ["C4.1a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C2.2b", "C4.1a"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C2.2b", "C4.1a"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "mount-doom": {
+      "chapter": 24,
+      "steps": {
+        "1": { "lo": ["C2.5a"], "cp": "apply", "kd": "conceptual" },
+        "2": { "lo": ["C2.5a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C2.5a"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C2.5a"], "cp": "evaluate", "kd": "metacognitive" },
+        "5": { "lo": ["C2.5a"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "coronation-repairs": {
+      "chapter": 25,
+      "steps": {
+        "1": { "lo": ["C2.5a", "C2.5b"], "cp": "apply", "kd": "conceptual" },
+        "2": { "lo": ["C2.5b"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C2.5a", "C2.5b"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C2.5a", "C2.5b"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "scouring-of-shire": {
+      "chapter": 26,
+      "steps": {
+        "1": { "lo": ["C2.5a"], "cp": "apply", "kd": "conceptual" },
+        "2": { "lo": ["C2.5a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C2.5a"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C2.5a"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "grey-havens": {
+      "chapter": 27,
+      "steps": {
+        "1": { "lo": ["C2.5c"], "cp": "apply", "kd": "conceptual" },
+        "2": { "lo": ["C2.5c"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C2.5c"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C2.5c"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "red-book": {
+      "chapter": 28,
+      "steps": {
+        "1": { "lo": ["C1.5a"], "cp": "apply", "kd": "conceptual" },
+        "2": { "lo": ["C1.5a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C1.5a"], "cp": "analyze", "kd": "conceptual" },
+        "4": { "lo": ["C1.5a"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "mod-1-there-and-back-again": {
+      "chapter": 1,
+      "steps": {
+        "2": { "lo": ["C1.1a"], "cp": "understand", "kd": "conceptual" },
+        "3": { "lo": ["C1.1a"], "cp": "apply", "kd": "conceptual" },
+        "4": { "lo": ["C1.1c", "C1.1d"], "cp": "apply", "kd": "conceptual" },
+        "5": { "lo": ["C1.1a", "C1.1c"], "cp": "apply", "kd": "conceptual" },
+        "6": { "lo": ["C1.1a", "C1.1c", "C1.1d"], "cp": "analyze", "kd": "conceptual" },
+        "7": { "lo": ["C1.1a"], "cp": "apply", "kd": "conceptual" },
+        "8": { "lo": ["C2.5a", "C2.5c"], "cp": "understand", "kd": "conceptual" },
+        "9": { "lo": ["C1.1a", "C1.1c", "C1.1d"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "mod-2-road-goes-ever-on": {
+      "chapter": 3,
+      "steps": {
+        "2": { "lo": ["C1.1c"], "cp": "understand", "kd": "conceptual" },
+        "3": { "lo": ["C1.1c"], "cp": "apply", "kd": "conceptual" },
+        "4": { "lo": ["C1.3a"], "cp": "apply", "kd": "conceptual" },
+        "5": { "lo": ["C1.1c", "C1.3a"], "cp": "analyze", "kd": "conceptual" },
+        "6": { "lo": ["C1.1c"], "cp": "apply", "kd": "conceptual" },
+        "7": { "lo": ["C1.1c", "C1.3a"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "mod-3-dragons-price": {
+      "chapter": 7,
+      "steps": {
+        "2": { "lo": ["C1.2a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C1.2a"], "cp": "apply", "kd": "conceptual" },
+        "4": { "lo": ["C2.5b"], "cp": "apply", "kd": "conceptual" },
+        "5": { "lo": ["C2.5b"], "cp": "analyze", "kd": "conceptual" },
+        "6": { "lo": ["C2.5c"], "cp": "apply", "kd": "conceptual" },
+        "7": { "lo": ["C1.2a", "C2.5b", "C2.5c"], "cp": "evaluate", "kd": "metacognitive" },
+        "8": { "lo": ["C1.2a", "C2.5b", "C2.5c"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "mod-4-shadows-over-middle-earth": {
+      "chapter": 10,
+      "steps": {
+        "2": { "lo": ["C1.4a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C1.4b"], "cp": "apply", "kd": "conceptual" },
+        "4": { "lo": ["C1.4a"], "cp": "apply", "kd": "conceptual" },
+        "5": { "lo": ["C1.4a"], "cp": "apply", "kd": "conceptual" },
+        "6": { "lo": ["C1.4a", "C1.4b"], "cp": "analyze", "kd": "conceptual" },
+        "7": { "lo": ["C1.4a"], "cp": "evaluate", "kd": "metacognitive" },
+        "8": { "lo": ["C1.4a", "C1.4b"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "mod-5-words-beneath-words": {
+      "chapter": 14,
+      "steps": {
+        "2": { "lo": ["C3.1a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C3.1a"], "cp": "apply", "kd": "conceptual" },
+        "4": { "lo": ["C3.1a"], "cp": "understand", "kd": "conceptual" },
+        "5": { "lo": ["C3.1a"], "cp": "apply", "kd": "conceptual" },
+        "6": { "lo": ["C3.1b"], "cp": "apply", "kd": "conceptual" },
+        "7": { "lo": ["C3.1a"], "cp": "analyze", "kd": "conceptual" },
+        "8": { "lo": ["C3.1a", "C3.1b"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "mod-6-war-of-the-ring": {
+      "chapter": 19,
+      "steps": {
+        "2": { "lo": ["C2.3a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C2.3c"], "cp": "evaluate", "kd": "metacognitive" },
+        "4": { "lo": ["C2.4a"], "cp": "apply", "kd": "conceptual" },
+        "5": { "lo": ["C2.4b"], "cp": "apply", "kd": "conceptual" },
+        "6": { "lo": ["C4.1a"], "cp": "apply", "kd": "conceptual" },
+        "7": { "lo": ["C2.3a", "C2.3c", "C2.4a", "C2.4b", "C4.1a"], "cp": "analyze", "kd": "conceptual" },
+        "8": { "lo": ["C2.3a", "C2.3c", "C2.4a", "C2.4b"], "cp": "apply", "kd": "procedural" }
+      }
+    },
+    "mod-7-return-of-the-king": {
+      "chapter": 24,
+      "steps": {
+        "2": { "lo": ["C2.5a"], "cp": "apply", "kd": "conceptual" },
+        "3": { "lo": ["C2.5a", "C2.5b"], "cp": "evaluate", "kd": "metacognitive" },
+        "4": { "lo": ["C2.5a"], "cp": "analyze", "kd": "conceptual" },
+        "5": { "lo": ["C2.5c"], "cp": "apply", "kd": "conceptual" },
+        "6": { "lo": ["C1.5a"], "cp": "apply", "kd": "conceptual" },
+        "7": { "lo": ["C2.5c"], "cp": "evaluate", "kd": "metacognitive" },
+        "8": { "lo": ["C2.5a", "C2.5b", "C2.5c", "C1.5a"], "cp": "apply", "kd": "procedural" }
+      }
+    }
+  }
+}
