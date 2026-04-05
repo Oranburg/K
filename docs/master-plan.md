@@ -32,8 +32,14 @@ The site must be **beautiful** — cinematic, image-rich, immersive — AND **ef
 | `data/learning-objectives.json` | Quaere LO tags (L3 indicators, cognitive process, knowledge dimension) |
 | `data/statutory-supplement.json` | 156 R2d/UCC sections from casebook supplement |
 
+### Also Completed (Session 4 continued)
+- ✅ Media mapping (`data/media-map.json` — 28 chapters mapped to podcast episodes + videos)
+- ✅ Engine shows "Review this chapter" podcast/video links on exercise completion
+- ✅ Progress dashboard on landing page (completion bar, chapter count)
+- ✅ Identified recording gaps (23/28 chapters lack dedicated videos)
+
 ### Next Steps
-1. LO-driven video/podcast integration (map 119 videos + 25 podcasts to chapters/LOs)
+1. Wire statutory-supplement.json into Tome sidebar (data exists, not yet rendered)
 2. Wire statutory-supplement.json into Tome sidebar for live lookup
 3. Re-enable Quaere links when Quaere goes live
 4. Accessibility (keyboard drag-drop, ARIA)
