@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="nav-depth" content="1">
+  <title>Sources — Contract Law</title>
+  <link rel="stylesheet" href="../assets/css/oranburg-style.css">
+  <link rel="icon" href="../assets/images/K-favicon-dark.png">
+  <style>
+    .sources-app { max-width: 1100px; margin: 0 auto; padding: 1.5rem 1rem; }
+    .sources-header h1 { display: flex; align-items: center; gap: 0.5rem; font-size: 1.8rem; }
+    .sources-header p { color: var(--text-muted); margin-top: 0.3rem; }
+
+    .controls { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.5rem 0 1rem; }
+    .search-box { position: relative; }
+    .search-box input {
+      width: 100%; padding: 0.65rem 0.75rem 0.65rem 2.4rem;
+      border: 1px solid var(--border); border-radius: 6px;
+      background: var(--card-bg); color: var(--text); font-size: 0.95rem;
+    }
+    .search-box input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px rgba(255,214,92,0.2); }
+    .search-box .icon { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+    .search-box .clear { position: absolute; right: 0.5rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-muted); font-size: 1.3rem; cursor: pointer; }
+
+    .filters { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: flex-end; }
+    .filter-group { display: flex; flex-direction: column; gap: 0.2rem; }
+    .filter-group label { font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .filter-group select { padding: 0.4rem 0.6rem; border: 1px solid var(--border); border-radius: 4px; background: var(--card-bg); color: var(--text); font-size: 0.85rem; }
+
+    .view-tabs { display: flex; gap: 0; margin-left: auto; }
+    .view-tab {
+      padding: 0.45rem 0.9rem; border: 1px solid var(--border);
+      background: var(--card-bg); color: var(--text-muted); font-size: 0.8rem;
+      cursor: pointer; transition: all 0.15s;
+    }
+    .view-tab:first-child { border-radius: 5px 0 0 5px; }
+    .view-tab:last-child { border-radius: 0 5px 5px 0; }
+    .view-tab.active { background: var(--accent); color: #000; border-color: var(--accent); font-weight: 600; }
+
+    .count { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+
+    /* Case list */
+    .case-list { display: flex; flex-direction: column; gap: 2px; }
+    .case-item {
+      border: 1px solid var(--border); border-radius: 6px;
+      background: var(--card-bg); transition: border-color 0.15s; overflow: hidden;
+    }
+    .case-item:hover { border-color: var(--accent); }
+    .case-item.unpub { border-left: 3px solid #f59e0b; }
+
+    .case-head {
+      display: flex; align-items: center; gap: 0.5rem; width: 100%;
+      padding: 0.6rem 0.8rem; background: none; border: none;
+      color: var(--text); cursor: pointer; text-align: left; font-size: 0.9rem;
+    }
+    .case-head .name { flex: 1; font-weight: 600; }
+    .case-head .year { font-size: 0.8rem; color: var(--text-muted); white-space: nowrap; }
+    .case-head .court { font-size: 0.75rem; color: var(--text-muted); display: none; }
+    @media (min-width: 640px) { .case-head .court { display: inline; margin-right: 0.5rem; } }
+    .case-head .arrow { transition: transform 0.15s; font-size: 0.8rem; }
+    .case-item.open .case-head .arrow { transform: rotate(90deg); }
+
+    .case-body {
+      display: none; padding: 0.5rem 0.8rem 0.8rem;
+      border-top: 1px solid var(--border); font-size: 0.85rem; line-height: 1.6;
+    }
+    .case-item.open .case-body { display: block; }
+    .detail { margin-bottom: 0.3rem; }
+    .detail strong { color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; margin-right: 0.4rem; }
+    .cite { font-style: italic; }
+    .badge { display: inline-block; font-size: 0.68rem; padding: 0.12rem 0.45rem; border-radius: 999px; font-weight: 600; }
+    .badge-warn { background: #fef3c7; color: #92400e; }
+    .badge-chapter { background: var(--accent); color: #000; margin: 0 2px; }
+    .unpub-warn { color: #f59e0b; font-weight: 600; font-size: 0.82rem; margin-bottom: 0.3rem; }
+
+    /* Module groups */
+    .module-groups { display: flex; flex-direction: column; gap: 0.75rem; }
+    .module-group { border: 1px solid var(--border); border-radius: 8px; background: var(--card-bg); overflow: hidden; }
+    .module-head {
+      display: flex; align-items: center; gap: 0.5rem; width: 100%;
+      padding: 0.75rem 1rem; background: none; border: none;
+      color: var(--text); cursor: pointer; font-size: 0.95rem;
+    }
+    .module-head .num { font-weight: 800; min-width: 6rem; color: var(--accent); }
+    .module-head .title { flex: 1; }
+    .module-head .cnt { font-size: 0.78rem; color: var(--text-muted); }
+    .module-body { display: none; padding: 0 1rem 0.8rem; }
+    .module-group.open .module-body { display: block; }
+    .module-group.open .module-head { border-bottom: 1px solid var(--border); }
+
+    .chapter-label { font-size: 0.78rem; color: var(--accent); font-weight: 700; margin: 0.6rem 0 0.2rem; }
+    .compact { display: grid; grid-template-columns: 1fr auto; gap: 0.3rem; padding: 0.25rem 0; border-bottom: 1px solid var(--border); font-size: 0.82rem; }
+    .compact:last-child { border-bottom: none; }
+    .compact .c-name { font-weight: 500; }
+    .compact .c-year { color: var(--text-muted); text-align: right; }
+
+    /* Statutes */
+    .statute-cards { display: flex; flex-direction: column; gap: 0.75rem; }
+    .statute-card { border: 1px solid var(--border); border-radius: 8px; background: var(--card-bg); padding: 1rem; }
+    .statute-card h3 { margin: 0 0 0.2rem; font-size: 1.05rem; }
+    .statute-card .s-cite { font-size: 0.82rem; color: var(--text-muted); }
+    .statute-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0.4rem 0; }
+    .statute-sections { margin-top: 0.5rem; }
+    .s-row { display: grid; grid-template-columns: 4.5rem 1fr; gap: 0.3rem; padding: 0.3rem 0; border-bottom: 1px solid var(--border); font-size: 0.82rem; }
+    .s-row:last-child { border-bottom: none; }
+    .s-num { font-weight: 600; color: var(--accent); }
+
+    .empty { text-align: center; padding: 2rem; color: var(--text-muted); }
+  </style>
+  <script>
+    var t = localStorage.getItem('k-theme') || 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+  </script>
+</head>
+<body>
+  <nav class="site-nav"></nav>
+  <div id="sources-root" class="sources-app">
+    <div class="sources-header">
+      <h1>&#128218; Sources</h1>
+      <p>Loading...</p>
+    </div>
+  </div>
+
+  <script src="../assets/js/nav.js"></script>
+  <script>
+  (function() {
+    var MODULES = { 1: 'Foundations', 2: 'Mutual Assent', 3: 'Consideration & Alternatives', 4: 'Defenses to Formation', 5: 'Interpretation', 6: 'Performance & Breach', 7: 'Remedies' };
+
+    var root = document.getElementById('sources-root');
+    var data = null;
+    var state = { search: '', chapter: null, module: null, view: 'cases', expanded: null };
+
+    // Load data
+    fetch('../data/sources.json')
+      .then(function(r) { return r.json(); })
+      .then(function(d) { data = d; render(); })
+      .catch(function() { root.innerHTML = '<p class="empty">Could not load sources data.</p>'; });
+
+    // Parse URL params
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('q')) state.search = params.get('q');
+    if (params.get('ch')) state.chapter = parseInt(params.get('ch'));
+    if (params.get('mod')) state.module = parseInt(params.get('mod'));
+
+    function filter() {
+      if (!data) return [];
+      var cases = data.cases;
+      if (state.chapter) cases = cases.filter(function(c) { return c.chapters.indexOf(state.chapter) >= 0; });
+      if (state.module) cases = cases.filter(function(c) { return c.modules.indexOf(state.module) >= 0; });
+      if (state.search.trim()) {
+        var q = state.search.toLowerCase();
+        cases = cases.filter(function(c) {
+          return c.name.toLowerCase().indexOf(q) >= 0 ||
+                 c.citation.toLowerCase().indexOf(q) >= 0 ||
+                 (c.court || '').toLowerCase().indexOf(q) >= 0 ||
+                 c.statutes.join(' ').toLowerCase().indexOf(q) >= 0 ||
+                 c.doctrines.join(' ').toLowerCase().indexOf(q) >= 0;
+        });
+      }
+      return cases.sort(function(a, b) { return (b.year || 0) - (a.year || 0); });
+    }
+
+    function renderCaseItem(c) {
+      var isOpen = state.expanded === c.id;
+      var cls = 'case-item' + (isOpen ? ' open' : '') + (c.unpublished ? ' unpub' : '');
+      var chapBadges = c.chapters.map(function(ch) { return '<span class="badge badge-chapter">Ch ' + ch + '</span>'; }).join(' ');
+
+      var details = '';
+      if (isOpen) {
+        details = '<div class="case-body">';
+        details += '<div class="detail"><strong>Citation</strong> <span class="cite">' + esc(c.citation) + '</span></div>';
+        if (c.court) details += '<div class="detail"><strong>Court</strong> ' + esc(c.court) + '</div>';
+        details += '<div class="detail"><strong>Chapters</strong> ' + chapBadges + '</div>';
+        if (c.statutes.length) details += '<div class="detail"><strong>Statutes</strong> ' + esc(c.statutes.join('; ')) + '</div>';
+        if (c.doctrines.length) details += '<div class="detail"><strong>Doctrines</strong> ' + esc(c.doctrines.join('; ')) + '</div>';
+        if (c.unpublished) details += '<div class="unpub-warn">&#9888; Unpublished — check court rules before citing</div>';
+        details += '</div>';
+      }
+
+      return '<div class="' + cls + '" data-id="' + c.id + '">' +
+        '<button class="case-head" onclick="toggleCase(\'' + c.id + '\')">' +
+          '<span class="name">' + esc(c.name) + '</span>' +
+          '<span class="court">' + esc(c.court || '') + '</span>' +
+          '<span class="year">' + (c.year || '') + '</span>' +
+          (c.unpublished ? ' <span class="badge badge-warn">Unpub</span>' : '') +
+          '<span class="arrow">&#9654;</span>' +
+        '</button>' + details + '</div>';
+    }
+
+    function renderModuleView() {
+      if (!data) return '';
+      var html = '<div class="module-groups">';
+      for (var m = 1; m <= 7; m++) {
+        var mCases = data.cases.filter(function(c) { return c.modules.indexOf(m) >= 0; });
+        var chapters = {};
+        mCases.forEach(function(c) {
+          c.chapters.forEach(function(ch) {
+            if (data.chapters[ch] && data.chapters[ch].module === m) {
+              if (!chapters[ch]) chapters[ch] = [];
+              chapters[ch].push(c);
+            }
+          });
+        });
+
+        html += '<div class="module-group" data-mod="' + m + '">' +
+          '<button class="module-head" onclick="toggleModule(' + m + ')">' +
+            '<span class="num">Module ' + m + '</span>' +
+            '<span class="title">' + MODULES[m] + '</span>' +
+            '<span class="cnt">' + mCases.length + ' cases</span>' +
+          '</button>' +
+          '<div class="module-body">';
+
+        var chNums = Object.keys(chapters).sort(function(a, b) { return a - b; });
+        chNums.forEach(function(ch) {
+          html += '<div class="chapter-label">Chapter ' + ch + ': ' + (data.chapters[ch] ? data.chapters[ch].title : '') + '</div>';
+          chapters[ch].sort(function(a, b) { return (b.year || 0) - (a.year || 0); }).forEach(function(c) {
+            html += '<div class="compact"><span class="c-name">' + esc(c.name) + '</span><span class="c-year">' + (c.year || '') + '</span></div>';
+          });
+        });
+
+        html += '</div></div>';
+      }
+      html += '</div>';
+      return html;
+    }
+
+    function renderStatutes() {
+      return '<div class="statute-cards">' +
+        '<div class="statute-card"><h3>Restatement (Second) of Contracts</h3>' +
+          '<div class="s-cite">R2d §§ 1–385</div>' +
+          '<p>The primary secondary authority for contract law. Persuasive in all jurisdictions. Organized into 16 chapters covering formation, defenses, interpretation, performance, and remedies.</p>' +
+          '<div class="statute-sections">' +
+            '<div class="s-row"><span class="s-num">§§ 1–8</span> Meaning of Terms</div>' +
+            '<div class="s-row"><span class="s-num">§§ 17–34</span> Formation: Mutual Assent</div>' +
+            '<div class="s-row"><span class="s-num">§§ 71–90</span> Consideration & Substitutes</div>' +
+            '<div class="s-row"><span class="s-num">§§ 110–139</span> Statute of Frauds</div>' +
+            '<div class="s-row"><span class="s-num">§§ 151–177</span> Mistake, Misrepresentation, Duress, Incapacity</div>' +
+            '<div class="s-row"><span class="s-num">§§ 200–223</span> Interpretation</div>' +
+            '<div class="s-row"><span class="s-num">§§ 224–261</span> Conditions & Performance</div>' +
+            '<div class="s-row"><span class="s-num">§§ 344–385</span> Remedies</div>' +
+          '</div></div>' +
+        '<div class="statute-card"><h3>UCC Article 2 — Sales</h3>' +
+          '<div class="s-cite">UCC §§ 2-102 to 2-725</div>' +
+          '<p>Governs contracts for the sale of goods. Binding law in all states (with variations). Key departures from common law: firm offer (§ 2-205), battle of forms (§ 2-207), gap-fillers, warranties, perfect tender rule.</p>' +
+          '<div class="statute-sections">' +
+            '<div class="s-row"><span class="s-num">§ 2-102</span> Scope — sale of goods</div>' +
+            '<div class="s-row"><span class="s-num">§ 2-104</span> Merchant defined</div>' +
+            '<div class="s-row"><span class="s-num">§ 2-201</span> Statute of frauds for goods</div>' +
+            '<div class="s-row"><span class="s-num">§ 2-205</span> Firm offers</div>' +
+            '<div class="s-row"><span class="s-num">§ 2-207</span> Battle of the forms</div>' +
+            '<div class="s-row"><span class="s-num">§ 2-302</span> Unconscionability</div>' +
+            '<div class="s-row"><span class="s-num">§ 2-313</span> Express warranties</div>' +
+            '<div class="s-row"><span class="s-num">§ 2-314</span> Implied warranty of merchantability</div>' +
+            '<div class="s-row"><span class="s-num">§ 2-315</span> Implied warranty of fitness</div>' +
+            '<div class="s-row"><span class="s-num">§ 2-316</span> Warranty exclusion/modification</div>' +
+            '<div class="s-row"><span class="s-num">§ 2-615</span> Commercial impracticability</div>' +
+            '<div class="s-row"><span class="s-num">§ 2-708</span> Seller\'s damages</div>' +
+            '<div class="s-row"><span class="s-num">§ 2-714</span> Buyer\'s damages for accepted goods</div>' +
+          '</div></div>' +
+      '</div>';
+    }
+
+    function esc(s) { var d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+
+    function render() {
+      if (!data) return;
+      var cases = filter();
+
+      var html = '<div class="sources-header"><h1>&#128218; Sources</h1>';
+      html += '<p>' + data.meta.totalCases + ' cases and ' + Object.keys(data.statutes).length + ' statutory compilations for contract law. Search, filter by chapter or module, or browse the statutory supplement.</p></div>';
+
+      // Controls
+      html += '<div class="controls"><div class="search-box"><span class="icon">&#128269;</span><input type="text" id="search" placeholder="Search cases, statutes, doctrines..." value="' + esc(state.search) + '"><button class="clear" id="clear-btn" style="' + (state.search ? '' : 'display:none') + '">&times;</button></div>';
+
+      html += '<div class="filters">';
+      html += '<div class="filter-group"><label>Module</label><select id="mod-filter"><option value="">All modules</option>';
+      for (var m = 1; m <= 7; m++) html += '<option value="' + m + '"' + (state.module === m ? ' selected' : '') + '>Mod ' + m + ': ' + MODULES[m] + '</option>';
+      html += '</select></div>';
+
+      html += '<div class="filter-group"><label>Chapter</label><select id="ch-filter"><option value="">All chapters</option>';
+      for (var ch = 1; ch <= 28; ch++) {
+        if (data.chapters[ch]) html += '<option value="' + ch + '"' + (state.chapter === ch ? ' selected' : '') + '>Ch ' + ch + ': ' + data.chapters[ch].title + '</option>';
+      }
+      html += '</select></div>';
+
+      html += '<div class="view-tabs">';
+      html += '<button class="view-tab' + (state.view === 'cases' ? ' active' : '') + '" onclick="setView(\'cases\')">Cases</button>';
+      html += '<button class="view-tab' + (state.view === 'modules' ? ' active' : '') + '" onclick="setView(\'modules\')">By Module</button>';
+      html += '<button class="view-tab' + (state.view === 'statutes' ? ' active' : '') + '" onclick="setView(\'statutes\')">Statutes</button>';
+      html += '</div></div></div>';
+
+      // Content
+      if (state.view === 'cases') {
+        html += '<p class="count">' + cases.length + ' case' + (cases.length !== 1 ? 's' : '') + (state.search || state.chapter || state.module ? ' matching filters' : '') + '</p>';
+        html += '<div class="case-list">';
+        cases.forEach(function(c) { html += renderCaseItem(c); });
+        if (!cases.length) html += '<div class="empty"><p>No cases match. <button onclick="clearAll()">Clear filters</button></p></div>';
+        html += '</div>';
+      } else if (state.view === 'modules') {
+        html += renderModuleView();
+      } else {
+        html += renderStatutes();
+      }
+
+      root.innerHTML = html;
+
+      // Bind events
+      var searchEl = document.getElementById('search');
+      if (searchEl) {
+        searchEl.addEventListener('input', function() { state.search = this.value; render(); });
+        searchEl.focus();
+        searchEl.setSelectionRange(searchEl.value.length, searchEl.value.length);
+      }
+      var clearBtn = document.getElementById('clear-btn');
+      if (clearBtn) clearBtn.addEventListener('click', function() { state.search = ''; render(); });
+      var modFilter = document.getElementById('mod-filter');
+      if (modFilter) modFilter.addEventListener('change', function() { state.module = this.value ? parseInt(this.value) : null; render(); });
+      var chFilter = document.getElementById('ch-filter');
+      if (chFilter) chFilter.addEventListener('change', function() { state.chapter = this.value ? parseInt(this.value) : null; render(); });
+    }
+
+    // Global functions for onclick handlers
+    window.toggleCase = function(id) { state.expanded = state.expanded === id ? null : id; render(); };
+    window.toggleModule = function(m) {
+      var el = document.querySelector('.module-group[data-mod="' + m + '"]');
+      if (el) el.classList.toggle('open');
+    };
+    window.setView = function(v) { state.view = v; render(); };
+    window.clearAll = function() { state.search = ''; state.chapter = null; state.module = null; render(); };
+  })();
+  </script>
+</body>
+</html>

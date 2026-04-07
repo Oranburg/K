@@ -12,6 +12,7 @@
     var path = window.location.pathname;
     if (/\/exercises\/[^/]+\//.test(path)) return 2;
     if (/\/tome\//.test(path)) return 1;
+    if (/\/sources\//.test(path)) return 1;
     return 0;
   }
 
@@ -32,6 +33,7 @@
     nav.innerHTML =
       '<ul>' +
         '<li><a href="' + (p || '/') + '">Course Home</a></li>' +
+        '<li><a href="' + p + 'sources/">Sources</a></li>' +
         '<li><a href="https://oranburg.law/courses/contracts/">Course Page</a></li>' +
         '<li><a href="https://oranburg.law">oranburg.law</a></li>' +
         '<li>' +
