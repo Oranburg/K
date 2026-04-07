@@ -310,8 +310,10 @@
           '<p class="story">' + esc(EXERCISE.narrative) + '</p>' +
           renderStepBody(s) +
         '</section>' +
-        '<aside class="tome"><div class="tome-head"><h3 class="tome-title">Tome of Law</h3></div>' +
-        '<div class="tome-body">' + EXERCISE.tome.map(function (x) { return '<p>' + esc(x) + '</p>'; }).join('') + '</div></aside>' +
+        '<aside class="tome"><div class="tome-head"><h3 class="tome-title">Key Doctrine</h3></div>' +
+        '<div class="tome-body">' + EXERCISE.tome.map(function (x) { return '<p>' + esc(x) + '</p>'; }).join('') +
+        '<p style="margin-top:0.8rem;"><a href="../../sources/?ch=' + EXERCISE.chapterNum + '" style="color:var(--accent);font-size:0.82rem;">&#128218; View all Chapter ' + EXERCISE.chapterNum + ' sources &rarr;</a></p>' +
+        '</div></aside>' +
       '</div>' +
       renderModal();
 
